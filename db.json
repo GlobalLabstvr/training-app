@@ -1,0 +1,18 @@
+{
+	"courses": [{
+		"id": "1",
+		"name": "OOPs",
+		"description": "Object Oriented Programming",
+		"subjects": [{
+				"id": "1",
+				"name": "Encapsulation",
+				"description": "encapsulation desc"
+			},
+			{
+				"id": "2",
+				"name": "Abstraction",
+				"description": "Abstraction desc"
+			}
+		]
+	}]
+}
