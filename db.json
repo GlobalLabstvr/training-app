@@ -3,7 +3,7 @@
 		"id": "1",
 		"name": "OOPs",
 		"description": "Object Oriented Programming",
-		"subjects": [{
+		"subject": [{
 				"id": "1",
 				"name": "Encapsulation",
 				"description": "encapsulation desc"

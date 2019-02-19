@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { CoursesService } from './side-nav/courses.service';
+import { TopicComponent } from './topic/topic.component';
 
-const routes: Routes = [ { path:'', component: HomeComponent, resolve: {'': CoursesService } } ];
+const routes: Routes = [ { path:'', component: HomeComponent },
+{ path:'topic', component: TopicComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

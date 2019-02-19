@@ -10,7 +10,6 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 })
 export class CoursesService implements Resolve<any> {
 
-  private course:Course;
   coursesUrl = 'http://localhost:3000/courses'; 
 
   constructor(private http: HttpClient) { }
