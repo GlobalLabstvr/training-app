@@ -4,7 +4,7 @@
     <mat-expansion-panel-header>
       {{course.name}}
     </mat-expansion-panel-header>
-    <a href="/topic" *ngFor="let subject of course.subject">{{subject.name}}</a>  
+    <a [routerLink]="['/topic']" *ngFor="let subject of course.subject">{{subject.name}}</a>  
   </mat-expansion-panel>
  <!--
   <mat-expansion-panel>
