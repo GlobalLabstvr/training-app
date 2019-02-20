@@ -1,41 +1,52 @@
-<!--<mat-tab-group>
-<mat-tab label="Programs">
-  <mat-card>Abstraction code </mat-card>
-  <mat-card>Abstraction code </mat-card>
-</mat-tab>
-<mat-tab label="Videos">
-    <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-      </div>
-  </mat-tab>
-<mat-tab label="Interviews">Interview Questions</mat-tab>
-</mat-tab-group>
--->
+
 <div class="jumbotron">
-<mat-tab-group>
+<mat-tab-group class="example">
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      First
+      Programs
     </ng-template>
-    Content 1
+    <mat-card class="sample">Abstraction code</mat-card><br>
+    <mat-card class="sample">Encapsulation code</mat-card><br>
+    <mat-card class="sample">Inheritance code</mat-card><br>
+    <mat-card class="sample">Polymorphism code</mat-card><br>
+    <mat-card class="sample">Method Overloading code</mat-card>
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Second
+      Videos
     </ng-template>
-    Content 2
+
+    <div class="row">
+      <div class="col-sm-8">
+        <iframe width="520" height="400" [src]="videoUrl | safe " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-sm-4">
+        <div class="list-group">
+          <button type="button" class="list-group-item list-group-item-action active">
+             {{topic.name}}
+          </button>
+          <button type="button" class="list-group-item list-group-item-action"
+          *ngFor="let video of topic.playlist" (click)="showVideo(video.url)" > {{video.name}}
+          </button>
+        </div>
+      </div>
+    </div>
   </mat-tab>
 
   <mat-tab>
     <ng-template mat-tab-label>
       <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Third
+      Interviews
     </ng-template>
-
-    Content 3
+    <mat-card class="sample">Diff b/w POPs and OOPs</mat-card><br>
+    <mat-card class="sample">Why Java is not pure object oriented?</mat-card><br>
+    <mat-card class="sample">Is Inheritance supported in java?</mat-card><br>
+    <mat-card class="sample">Define Constructor?</mat-card><br>
+    <mat-card class="sample">Differentiate Overloading and Overriding</mat-card>
+    
   </mat-tab>
 </mat-tab-group>
 </div>

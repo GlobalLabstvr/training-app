@@ -1,18 +1,62 @@
 {
-	"courses": [{
-		"id": "1",
-		"name": "OOPs",
-		"description": "Object Oriented Programming",
-		"subject": [{
-				"id": "1",
-				"name": "Encapsulation",
-				"description": "encapsulation desc"
-			},
-			{
-				"id": "2",
-				"name": "Abstraction",
-				"description": "Abstraction desc"
-			}
-		]
-	}]
+	"courses": [
+		{
+			"id": "1",
+			"name": "OOPs",
+			"description": "Object Oriented Programming",
+			"subject": [
+				{
+					"id": "1",
+					"name": "Abstraction",
+					"description": "Abstraction desc"
+				},
+				{
+					"id": "2",
+					"name": "Encapsulation",
+					"description": "Encapsulation desc"
+				}
+			]
+		}
+	],
+	"videos": [
+		{
+			"id": "1",
+			"name": "abstraction",
+			"description": "description",
+			"playlist": [
+				{
+					"id": "1",
+					"name": "Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "encapsulation",
+			"description": "description",
+			"playlist": [
+				{
+					"id": "1",
+					"name": "Enc Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Enc Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				}
+			]
+		}
+
+	]
 }

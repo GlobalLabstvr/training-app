@@ -5,15 +5,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { CommonMaterialModule } from './common-material/common-material.module';
+import { SafePipe } from './safe.pipe';
 
 
 @NgModule({
-  declarations: [ HeaderComponent, FooterComponent, SideNavComponent ],
+  declarations: [ HeaderComponent, FooterComponent, SideNavComponent , SafePipe],
   imports: [
     CommonModule,
     CommonMaterialModule,
     RouterModule
   ],
-  exports: [HeaderComponent, FooterComponent, SideNavComponent]
+  exports: [HeaderComponent, FooterComponent, SideNavComponent, SafePipe]
 })
 export class SharedModule { }

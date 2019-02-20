@@ -8,6 +8,7 @@ import { CommonMaterialModule } from '../shared/common-material/common-material.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TopicComponent } from './topic/topic.component'
+import { TopicResolver } from './topic/topic.resolver';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { TopicComponent } from './topic/topic.component'
     SharedModule,
     CommonMaterialModule,
     BrowserAnimationsModule,
-
-  ]
+  ],
+  providers: [TopicResolver]
 })
 export class HomeModule { }
