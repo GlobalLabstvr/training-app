@@ -7,12 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonMaterialModule } from '../shared/common-material/common-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { TopicComponent } from './topic/topic.component'
-import { TopicResolver } from './topic/topic.resolver';
-
 
 @NgModule({
-  declarations: [HomeComponent, TopicComponent],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -20,6 +17,6 @@ import { TopicResolver } from './topic/topic.resolver';
     CommonMaterialModule,
     BrowserAnimationsModule,
   ],
-  providers: [TopicResolver]
+  providers: []
 })
 export class HomeModule { }

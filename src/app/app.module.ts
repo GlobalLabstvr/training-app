@@ -7,6 +7,9 @@ import { SharedModule } from './shared/shared.module';
 import { CommonMaterialModule } from './shared/common-material/common-material.module';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { TopicModule } from './topic/topic.module';
+import { ActivatedRouteSnapshot } from '@angular/router';
+
 
 
 @NgModule({
@@ -20,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     CommonMaterialModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
