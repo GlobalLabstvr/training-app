@@ -334,3 +334,15 @@ i.fa.fa-spinner.fa-spin {
     cursor: not-allowed;
     background-color: #C2C2C2;
 }
+
+.container1{
+    background-color: white;
+}
+
+.add-files-btn{
+    margin-left: 80%;
+}
+
+.upload-files-btn{
+    margin-left: 80%;
+}

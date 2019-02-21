@@ -47,4 +47,12 @@ export class TopicComponent implements OnInit{
   showVideo(url:string){
     this.videoUrl = url;
   }
+
+  addFiles(){
+
+  }
+
+  openUploadDialog(){
+    
+  }
 }
