@@ -6,7 +6,7 @@ import { TopicComponent } from './topic.component';
 import { TopicResolver } from './topic.resolver';
 import { CommonMaterialModule } from '../shared/common-material/common-material.module';
 import { SharedModule } from '../shared/shared.module';
-import { ActivatedRouteSnapshot } from '@angular/router';
+import { UploadModule } from '../shared/upload/upload.module';
 
 @NgModule({
   declarations: [ TopicComponent ],
@@ -14,7 +14,8 @@ import { ActivatedRouteSnapshot } from '@angular/router';
     CommonModule,
     SharedModule,
     TopicRoutingModule,
-    CommonMaterialModule
+    CommonMaterialModule,
+    UploadModule
   ],
   providers: [TopicResolver]
 })
