@@ -1,86 +1,115 @@
-
 <div class="jumbotron">
-<mat-tab-group class="example">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Mentoring
-    </ng-template>
-    <app-upload></app-upload>
-   <!-- <div class="container1">
-     <h5>Upload files</h5> 
-     <button [disabled]="uploading || uploadSuccessful" mat-raised-button color="primary" class="add-files-btn" (click)="addFiles()">
-        Add Files
-      </button>
-      <br><br><br>
-      <button mat-raised-button color="primary" class="upload-files-btn" (click)="openUploadDialog()">Upload</button>
-    
-      <mat-dialog-content>
-        <mat-list>
-            <mat-list-item *ngFor="let file of files">
 
-                <h5 mat-line>{{file.name}}</h5>
-        
-                <mat-progress-bar *ngIf="progress" mode="determinate" [value]="progress[file.name].progress | async"></mat-progress-bar>
-        
-              </mat-list-item>
+  <mat-tab-group class="example">
 
-        </mat-list>
-      </mat-dialog-content>
-
-      <mat-dialog-actions class="actions">
-          <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancel</button>
-          <button mat-raised-button color="primary" (click)="closeDialog()">{{primaryButtonText}}</button>
-        </mat-dialog-actions>
-    
-    </div>-->
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Programs
-    </ng-template>
-    <mat-card class="sample">Abstraction code</mat-card><br>
-    <mat-card class="sample">Encapsulation code</mat-card><br>
-    <mat-card class="sample">Inheritance code</mat-card><br>
-    <mat-card class="sample">Polymorphism code</mat-card><br>
-    <mat-card class="sample">Method Overloading code</mat-card>
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Videos
-    </ng-template>
-
-    <div class="row">
-      <div class="col-sm-8">
-        <iframe width="520" height="400" [src]="videoUrl | safe " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Mentoring
+      </ng-template>
+      <div > 
+          <app-upload></app-upload>
       </div>
-      <div class="col-sm-4">
-        <div class="list-group">
-          <button type="button" class="list-group-item list-group-item-action active">
-             {{topic.name}}
-          </button>
-          <button type="button" class="list-group-item list-group-item-action"
-          *ngFor="let video of topic.playlist" (click)="showVideo(video.url)" > {{video.name}}
-          </button>
+      <mat-accordion>
+        <mat-expansion-panel  *ngFor="let chapter of topic.chapters">
+          <mat-expansion-panel-header> <b>{{chapter.name}}</b> </mat-expansion-panel-header>
+          <div class="row">
+
+            <div class="col-md-12">
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
+     
+                      <li><a [routerLink]="['/topic']">Video 1</a></li>
+                      <li><a [routerLink]="['/topic']">Video 1</a></li>
+                      <li><a [routerLink]="['/topic']">Video 1</a></li>
+                      <li><a [routerLink]="['/topic']">Video 1</a></li>
+    
+                  </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header> Practice Programs </mat-expansion-panel-header>
+ 
+                  <li><a [routerLink]="['/topic']">Pgm1</a></li>
+                  <li><a [routerLink]="['/topic']">Pgm2</a></li>
+                  <li><a [routerLink]="['/topic']">Pgm3</a></li>
+                  <li><a [routerLink]="['/topic']">Pgm4</a></li>
+
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>Documents
+                   
+                </mat-expansion-panel-header>
+
+                  <li><a [routerLink]="['/topic']">Doc1</a></li>
+                  <li><a [routerLink]="['/topic']">Doc2</a></li>
+                  <li><a [routerLink]="['/topic']">Doc3</a></li>
+                  <li><a [routerLink]="['/topic']">Doc4</a></li>
+
+              </mat-expansion-panel>
+
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-tab>
+
+
+
+
+
+
+
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Programs
+      </ng-template>
+      <mat-card class="sample">Abstraction code</mat-card><br>
+      <mat-card class="sample">Encapsulation code</mat-card><br>
+      <mat-card class="sample">Inheritance code</mat-card><br>
+      <mat-card class="sample">Polymorphism code</mat-card><br>
+      <mat-card class="sample">Method Overloading code</mat-card>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Videos
+      </ng-template>
+
+      <div class="row">
+        <div class="col-sm-8">
+          <iframe width="520" height="400" [src]="videoUrl | safe " frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-sm-4">
+          <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action active">
+              {{topic.name}}
+            </button>
+            <button type="button" class="list-group-item list-group-item-action" *ngFor="let video of topic.playlist"
+              (click)="showVideo(video.url)"> {{video.name}}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </mat-tab>
+    </mat-tab>
 
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Interviews
-    </ng-template>
-    <mat-card class="sample">Diff b/w POPs and OOPs</mat-card><br>
-    <mat-card class="sample">Why Java is not pure object oriented?</mat-card><br>
-    <mat-card class="sample">Is Inheritance supported in java?</mat-card><br>
-    <mat-card class="sample">Define Constructor?</mat-card><br>
-    <mat-card class="sample">Differentiate Overloading and Overriding</mat-card>
-    
-  </mat-tab>
-</mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Interviews
+      </ng-template>
+      <mat-card class="sample">Diff b/w POPs and OOPs</mat-card><br>
+      <mat-card class="sample">Why Java is not pure object oriented?</mat-card><br>
+      <mat-card class="sample">Is Inheritance supported in java?</mat-card><br>
+      <mat-card class="sample">Define Constructor?</mat-card><br>
+      <mat-card class="sample">Differentiate Overloading and Overriding</mat-card>
+
+    </mat-tab>
+  </mat-tab-group>
+
 </div>

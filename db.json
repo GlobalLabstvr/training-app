@@ -14,6 +14,26 @@
 					"id": "2",
 					"name": "Encapsulation",
 					"description": "Encapsulation desc"
+				},
+				{
+					"id": "3",
+					"name": "Inheritance",
+					"description": "desc"
+				},
+				{
+					"id": "4",
+					"name": "Polymorphism",
+					"description": "desc"
+				},
+				{
+					"id": "5",
+					"name": "Overloading",
+					"description": "desc"
+				},
+				{
+					"id": "6",
+					"name": "Overriding",
+					"description": "desc"
 				}
 			]
 		}
@@ -36,7 +56,35 @@
 					"description": "Spring to Winter of AI",
 					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
 				}
+			],
+	"chapters": [
+		{
+			"id": "1",
+			"name": "Abstraction",
+			"videos":[
+				{
+					"id": "1",
+					"name": "Abstraction link",
+					"url": "https://youtu.be/zZq_XDhU-rc"
+				}
+			],
+			"programs":[
+				{
+					"id": "1",
+					"name": "Abstraction link",
+					"url": "https://youtu.be/zZq_XDhU-rc"
+				}
+			],
+			"documents":[
+				{
+					"id": "1",
+					"name": "Abstraction docs",
+					"url":"https://youtu.be/zZq_XDhU-rc"
+				}
 			]
+			
+		}	
+	]
 		},
 		{
 			"id": "2",
@@ -53,7 +101,7 @@
 					"id": "2",
 					"name": "Enc Lec 1.2",
 					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+					"url": "https://youtu.be/zZq_XDhU-rc"
 				}
 			]
 		}
