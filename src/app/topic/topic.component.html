@@ -1,6 +1,7 @@
 <div class="jumbotron">
 
-  <mat-tab-group class="example">
+  <mat-tab-group class="example" [selectedIndex]="selectedIndex"
+  (selectedTabChange)="onLinkClick($event)">
 
     <mat-tab>
       <ng-template mat-tab-label>
@@ -19,8 +20,8 @@
 
                 <mat-expansion-panel>
                     <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
-     
-                      <li><a [routerLink]="['/topic']">Video 1</a></li>
+                    <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
+                     <li><a [routerLink]="['/topic']">Video 1</a></li>
                       <li><a [routerLink]="['/topic']">Video 1</a></li>
                       <li><a [routerLink]="['/topic']">Video 1</a></li>
                       <li><a [routerLink]="['/topic']">Video 1</a></li>
@@ -82,10 +83,10 @@
 
       <div class="row">
         <div class="col-sm-8">
-          <iframe width="520" height="400" [src]="videoUrl | safe " frameborder="0"
+          <iframe [width]="iframeWidth" height="400" [src]="videoUrl | safe " frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" *ngIf="showPlaylist">
           <div class="list-group">
             <button type="button" class="list-group-item list-group-item-action active">
               {{topic.name}}
