@@ -39,7 +39,7 @@ import {
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
-import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatCarouselModule  } from '@ngmodule/material-carousel';
 
 @NgModule({
     imports: [
@@ -76,7 +76,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
         MatToolbarModule,
         MatTooltipModule,
         CdkTableModule,
-        MatCarouselModule
+        MatCarouselModule,
+
         
     ],
     exports: [
@@ -112,7 +113,8 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
         MatToolbarModule,
         MatTooltipModule,
         CdkTableModule,
-        MatCarouselModule
+        MatCarouselModule,
+
         
     ]
 })

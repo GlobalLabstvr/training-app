@@ -36,6 +36,43 @@
 					"description": "desc"
 				}
 			]
+		},
+		{
+			"id": "2",
+			"name": "Java",
+			"description": "Object Oriented Programming",
+			"subject": [
+				{
+					"id": "1",
+					"name": "Abstraction",
+					"description": "Abstraction desc"
+				},
+				{
+					"id": "2",
+					"name": "Encapsulation",
+					"description": "Encapsulation desc"
+				},
+				{
+					"id": "3",
+					"name": "Inheritance",
+					"description": "desc"
+				},
+				{
+					"id": "4",
+					"name": "Polymorphism",
+					"description": "desc"
+				},
+				{
+					"id": "5",
+					"name": "Overloading",
+					"description": "desc"
+				},
+				{
+					"id": "6",
+					"name": "Overriding",
+					"description": "desc"
+				}
+			]
 		}
 	],
 	"videos": [

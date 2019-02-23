@@ -4,7 +4,7 @@ import { ThemePalette } from '@angular/material';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   MatCarouselSlideComponent,
-  //Orientation
+  Orientation
 } from '@ngmodule/material-carousel';
 
 @Component({
@@ -22,7 +22,7 @@ export class MentorComponent {
   public showContent = true;
 
   public timings = '250ms ease-in';
-  public autoplay = true;
+  public autoplay = false;
   public interval = 5000;
   public loop = true;
   public hideArrows = false;
@@ -35,7 +35,7 @@ export class MentorComponent {
   public hideOverlay = true;
   public useKeyboard = true;
   public useMouseWheel = false;
-  //public orientation: Orientation = 'ltr';
+  public orientation: Orientation = 'ltr';
 
   @ViewChildren(MatCarouselSlideComponent) public carouselSlides: QueryList<
     MatCarouselSlideComponent
@@ -57,6 +57,7 @@ export class MentorComponent {
   [hideIndicators]="${this.hideIndicators}"
   [useKeyboard]="${this.useKeyboard}"
   [useMouseWheel]="${this.useMouseWheel}"
+  orientation = "${this.orientation}"
 >
   <mat-carousel-slide
     #matCarouselSlide
