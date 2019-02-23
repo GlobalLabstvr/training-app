@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone, OnChanges } from '@angular/core';
 import { TopicService } from './topic.service';
 import { Topic } from './topic';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
