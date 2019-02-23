@@ -39,6 +39,8 @@ import {
 } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 @NgModule({
     imports: [
         MatAutocompleteModule,
@@ -74,7 +76,7 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatToolbarModule,
         MatTooltipModule,
         CdkTableModule,
-    
+        MatCarouselModule
         
     ],
     exports: [
@@ -110,6 +112,7 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatToolbarModule,
         MatTooltipModule,
         CdkTableModule,
+        MatCarouselModule
         
     ]
 })

@@ -7,9 +7,10 @@ import { TopicResolver } from './topic.resolver';
 import { CommonMaterialModule } from '../shared/common-material/common-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { UploadModule } from '../shared/upload/upload.module';
+import { MentorComponent } from './mentor/mentor.component';
 
 @NgModule({
-  declarations: [ TopicComponent ],
+  declarations: [ TopicComponent, MentorComponent ],
   imports: [
     CommonModule,
     SharedModule,

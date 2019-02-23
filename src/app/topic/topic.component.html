@@ -3,15 +3,25 @@
   <mat-tab-group class="example" [selectedIndex]="selectedIndex"
   (selectedTabChange)="onLinkClick($event)">
 
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+      Mentoring
+    </ng-template>
+    <div > 
+        <app-mentor></app-mentor>
+    </div>
+  </mat-tab>
+
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        Mentoring
+        Resources
       </ng-template>
       <div > 
           <app-upload></app-upload>
       </div>
-      <mat-accordion>
+      <mat-accordion >
         <mat-expansion-panel  *ngFor="let chapter of topic.chapters">
           <mat-expansion-panel-header> <b>{{chapter.name}}</b> </mat-expansion-panel-header>
           <div class="row">
