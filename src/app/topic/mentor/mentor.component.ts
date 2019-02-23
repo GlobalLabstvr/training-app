@@ -16,11 +16,10 @@ export class MentorComponent {
   private static readonly INSTALL_TEXT =
     'npm install @ngmodule/material-carousel';
 
-  public slidesList = ['demo.png', 
-                        'images_phone.jpg', 
-                        'images.jpg'
+  public slidesList = ['Slide1.PNG', 
+                        'Slide2.PNG'
                     ];
-  public showContent = false;
+  public showContent = true;
 
   public timings = '250ms ease-in';
   public autoplay = true;
@@ -30,10 +29,10 @@ export class MentorComponent {
   public hideIndicators = false;
   public color: ThemePalette = 'accent';
   public maxWidth = 'auto';
-  public proportion = 25;
+  public proportion = 50;
   public slides = this.slidesList.length;
   public overlayColor = '#00000040';
-  public hideOverlay = false;
+  public hideOverlay = true;
   public useKeyboard = true;
   public useMouseWheel = false;
   //public orientation: Orientation = 'ltr';

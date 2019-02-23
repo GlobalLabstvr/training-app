@@ -1,51 +1,25 @@
-<div class="demo-container mat-app-background">
-  <mat-card>
-    <mat-card-content>
+<mat-card>
+  <mat-card-content>
 
-      <div class="demo-carousel">
-        <mat-carousel
-          #matCarousel
-          [timings]="timings"
-          [autoplay]="autoplay"
-          [interval]="interval"
-          [loop]="loop"
-          [hideArrows]="hideArrows"
-          [hideIndicators]="hideIndicators"
-          [color]="color"
-          [maxWidth]="maxWidth"
-          [proportion]="proportion"
-          [useKeyboard]="useKeyboard"
-          [useMouseWheel]="useMouseWheel"
-          [orientation]="orientation"
-          [slides]="slides"
-        >
-          <mat-carousel-slide
-            #matCarouselSlide
-            *ngFor="let slide of slidesList; let i = index"
-            image="./assets/{{slide}}"
-            [overlayColor]="overlayColor"
-            [hideOverlay]="hideOverlay"
-          >
-            <ng-container *ngIf="showContent">
-              <div
-                style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center"
-              >
-                <h1>{{ i }}</h1>
-                <p>disabled: {{ matCarouselSlide.disabled }}</p>
-                <button
-                  mat-flat-button
-                  (click)="
-                    matCarouselSlide.disabled = !matCarouselSlide.disabled
-                  "
-                >
-                  Click me!
-                </button>
-              </div>
-            </ng-container>
-          </mat-carousel-slide>
-        </mat-carousel>
-      </div>
+    <div class="demo-carousel">
+      <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
+        [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
+        [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel"
+        [orientation]="orientation" [slides]="slides">
+        <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slidesList; let i = index"
+          image="assets/abstraction-1/{{slide}}" [overlayColor]="overlayColor" [hideOverlay]="hideOverlay">
+          <ng-container *ngIf="showContent">
+            <div
+              style="width: 100%; height: 80%; display: flex; align-items: flex-start ; flex-direction: column; justify-content: flex-end; margin-bottom: auto;">
 
-   </mat-card-content>
-  </mat-card>
-</div>
+                      <button type="button" class="btn btn-link " (click)="loadVideos1()">Program 1</button>
+                    <button type="button" class="btn btn-link " (click)="loadVideos()">Video 1</button>
+                    <button type="button" class="btn btn-link " (click)="loadVideos()">Program 3</button>
+                </div>
+          </ng-container>
+        </mat-carousel-slide>
+      </mat-carousel>
+    </div>
+
+  </mat-card-content>
+</mat-card>

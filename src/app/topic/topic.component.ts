@@ -10,7 +10,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.css']
 })
-export class TopicComponent implements OnInit, OnDestroy {
+export class TopicComponent implements OnInit, OnChanges{
   @Input()
   videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
 
@@ -63,7 +63,7 @@ export class TopicComponent implements OnInit, OnDestroy {
     
   }
 
-  ngOnDestroy(){
+  ngOnChanges(){
     console.log("unscribe");
     this.subscribtion.unsubscribe();
   }
