@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone, OnChang
 import { TopicService } from './topic.service';
 import { Topic } from './topic';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
@@ -10,7 +10,7 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.css']
 })
-export class TopicComponent implements OnInit, OnChanges{
+export class TopicComponent implements OnInit, OnChanges {
   @Input()
   videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
 
@@ -18,84 +18,84 @@ export class TopicComponent implements OnInit, OnChanges{
   show: boolean = false;
   subscribtion: Subscription;
   selectedIndex = 0;
-  showPlaylist:boolean = true;
+  showPlaylist: boolean = true;
   iframeWidth = 520;
 
   constructor(private topicService: TopicService,
     private router: Router,
     private route: ActivatedRoute,
-    private change: ChangeDetectorRef, 
+    private change: ChangeDetectorRef,
     private zone: NgZone) {
 
-      topicService.topicAnnounced$.subscribe(
-        videoUrl => {
-          console.log('vu:'+videoUrl)
-          this.loadVideos(videoUrl);
-        });
-
-      this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
-        
-        if(route.snapshot.params['id'] !== undefined){
-          console.log('in topic cons'+ route.snapshot.params['id']+":"+this.router.url);
-          this.getTopics(route.snapshot.params['id']);
-        }
-        else{
-          console.log('navigation started:'+this.router.url)
-        }
+    topicService.topicAnnounced$.subscribe(
+      videoUrl => {
+        console.log('vu:' + videoUrl)
+        this.loadVideos(videoUrl);
       });
+
+    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
+
+      if (route.snapshot.params['id'] !== undefined) {
+        console.log('in topic cons' + route.snapshot.params['id'] + ":" + this.router.url);
+        this.getTopics(route.snapshot.params['id']);
+      }
+      else {
+        console.log('navigation started:' + this.router.url)
+      }
+    });
   }
 
   ngOnInit() {
     this.topic = this.route.snapshot.data['topic'];
+    this.topicService.setTopic(this.topic);
   }
 
-  getTopics(id:string): void {
-    this.topicService.getVideos(id)
+  getTopics(id: string): void {
+    this.topicService.getTopics(id)
       .subscribe(topic => {
-      this.topic = topic;
-        console.log('get value with id:'+id);
-        console.log(this.topic);
+        this.topic = topic;
+        this.topicService.setTopic(topic);
       });
   }
 
-  showVideo(url:string){
+  showVideo(url: string) {
     this.videoUrl = url;
   }
 
-  addFiles(){
+  addFiles() {
 
   }
 
-  openUploadDialog(){
-    
+  openUploadDialog() {
+
   }
 
-  ngOnChanges(){
+  ngOnChanges() {
     console.log("unscribe");
     this.subscribtion.unsubscribe();
   }
-  
-  loadVideos(url:string){
+
+  loadVideos(url: string) {
     console.log('firee')
-   // this.selectedIndex=2;
+    // this.selectedIndex=2;
     this.videoUrl = url;
-   
-    window.setTimeout(()=>{
+
+    window.setTimeout(() => {
 
       this.showPlaylist = true;
 
-          this.showPlaylist = false;
-          this.iframeWidth = 800;
+      this.showPlaylist = false;
+      this.iframeWidth = 800;
 
       // run inside Angular
-      this.zone.run(()=>{ 
-        console.log('cunnrrent:'+this.selectedIndex)
-         this.selectedIndex = 3;
-         // force change detection
-         console.log('zone')
-         this.change.detectChanges();
+      this.zone.run(() => {
+        console.log('cunnrrent:' + this.selectedIndex)
+        this.selectedIndex = 3;
+        // force change detection
+        console.log('zone')
+        this.change.detectChanges();
       });
-  });
+    });
 
   }
 
@@ -105,12 +105,12 @@ export class TopicComponent implements OnInit, OnChanges{
     console.log('tab => ', event.tab);
     this.selectedIndex = event.index;
 
-    if(this.selectedIndex != 3){
-   this.showPlaylist = true;
-   this.iframeWidth = 520;
-   this.videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
+    if (this.selectedIndex != 3) {
+      this.showPlaylist = true;
+      this.iframeWidth = 520;
+      this.videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
     }
-   
-    
+
+
   }
 }

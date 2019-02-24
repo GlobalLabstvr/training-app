@@ -10,20 +10,29 @@ import { Subject } from 'rxjs';
 })
 export class TopicService {
 
-  videoUrl = 'http://localhost:3000/videos/'; 
+  topicUrl = 'http://localhost:3000/topics/'; 
 
   private topicSubject = new Subject<string>();
+  private fetchTopicSubject = new Subject<Topic>();
 
   topicAnnounced$ = this.topicSubject.asObservable();
+  topicFetched$ = this.fetchTopicSubject.asObservable();
+
+  topic: Topic;
 
   constructor(private http: HttpClient) { }
 
-  getVideos(id:string){
-    return this.http.get<Topic>(this.videoUrl+id);
+  getTopics(id:string){
+    return this.http.get<Topic>(this.topicUrl+id);
   };
 
   announceTopic(topic: string) {
     this.topicSubject.next(topic);
+  }
+
+  setTopic(topic:Topic){
+    this.topic = topic;
+    this.fetchTopicSubject.next(topic);
   }
 
 }

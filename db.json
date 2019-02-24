@@ -75,7 +75,7 @@
 			]
 		}
 	],
-	"videos": [
+	"topics": [
 		{
 			"id": "1",
 			"name": "abstraction",
@@ -94,34 +94,109 @@
 					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
 				}
 			],
-	"chapters": [
-		{
-			"id": "1",
-			"name": "Abstraction",
-			"videos":[
+			"chapters": [
 				{
-					"id": "1",
-					"name": "Abstraction link",
-					"url": "https://youtu.be/zZq_XDhU-rc"
-				}
-			],
-			"programs":[
+					"id" : "1",
+					"name" : "slide 1",
+					"description" : "slide 1",
+					"master": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "What do you know about the Abstraction?",
+						"videos": [
+							
+						],
+						"programs": [
+							{
+								
+									"id": "1",
+									"name": "Introduction to Abstraction",
+									"description": "What do you know about the Abstraction?",
+									"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+								
+							}
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					},
+					"student" :{
+						"id": "1",
+						"name": "Abstraction",
+						"description": "This is very abstract concept sir... Can't explain in words...",
+						"videos": [
+							
+						],
+						"programs": [
+							{
+								"id": "1",
+								"name": "Abstraction link",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					}
+				},
 				{
-					"id": "1",
-					"name": "Abstraction link",
-					"url": "https://youtu.be/zZq_XDhU-rc"
-				}
-			],
-			"documents":[
-				{
-					"id": "1",
-					"name": "Abstraction docs",
-					"url":"https://youtu.be/zZq_XDhU-rc"
+					"id" : "2",
+					"name" : "slide 2",
+					"description" : "slide 2",
+					"master": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "Excellent!!! Watch the below Video",
+						"videos": [
+							{
+								
+								"id": "1",
+								"name": "Introduction to Abstraction",
+								"description": "What do you know about the Abstraction?",
+								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+							
+						}
+							
+						],
+						"programs": [
+							
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					},
+					"student" :{
+						"id": "1",
+						"name": "Abstraction",
+						"description": "Ok Sir...",
+						"videos": [
+							
+						],
+						"programs": [
+							
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					}
 				}
 			]
-			
-		}	
-	]
 		},
 		{
 			"id": "2",
@@ -142,6 +217,5 @@
 				}
 			]
 		}
-
 	]
 }

@@ -14,7 +14,7 @@ export class TopicResolver implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot) : Observable<Topic>{
         console.log('getvalue');
-        return this.topicService.getVideos(route.params['id']);
+        return this.topicService.getTopics(route.params['id']);
     }
 
 }

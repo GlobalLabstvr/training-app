@@ -7,6 +7,7 @@ import {
   Orientation
 } from '@ngmodule/material-carousel';
 import { TopicService } from '../topic.service';
+import { Topic } from '../topic';
 
 @Component({
   selector: 'app-mentor',
@@ -41,18 +42,25 @@ export class MentorComponent {
   >;
   public darkMode = false;
 
+  topic: Topic;
  
   constructor(
     private overlayContainer: OverlayContainer,
     private elementRef: ElementRef<HTMLElement>,
     private topicService: TopicService
-  ) {}
+  ) {
+    topicService.topicFetched$.subscribe(
+      topic => {
+        this.topic = topic;
+       });
+  }
 
    public resetSlides(): void {
     this.carouselSlides.forEach(item => (item.disabled = false));
   }
 
   loadVideos(videoUrl: string){
+    console.log('load vide:'+videoUrl)
     this.topicService.announceTopic(videoUrl);
   }
 }

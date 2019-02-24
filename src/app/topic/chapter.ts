@@ -1,5 +1,11 @@
+import { Discussion } from './discussion';
+
 export interface Chapter{
     id: string;
     name: string;
-    url: string;
+    description: string;
+    master: Discussion;
+    student: Discussion;
+} Discussion;
+    student: Discussion;
 }
