@@ -1,25 +1,65 @@
-<mat-card>
-  <mat-card-content>
+<!-- <mat-card>
+    <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
+      [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
+      [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
+      [slides]="slides">
+      <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slidesList; let i = index"
+        image="assets/abstraction-1/{{slide}}" [overlayColor]="overlayColor" [hideOverlay]="hideOverlay">
+      </mat-carousel-slide>
+    </mat-carousel>
+  </mat-card>
+  <mat-card>
+    <button type="button" class="btn btn-link " (click)="loadVideos1()">Program 1</button>
+    <button type="button" class="btn btn-link " (click)="loadVideos()">Video 1</button>
+    <button type="button" class="btn btn-link " (click)="loadVideos()">Program 3</button>
+  </mat-card>
+-->
+<div class="demo-carousel">
+  <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
+    [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
+    [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
+    [slides]="slides">
+    <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slidesList; let i = index" [hideOverlay]="hideOverlay"
+      image="assets/demo.png">
+      <ng-container>
 
-    <div class="demo-carousel">
-      <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
-        [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
-        [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel"
-        [orientation]="orientation" [slides]="slides">
-        <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slidesList; let i = index"
-          image="assets/abstraction-1/{{slide}}" [overlayColor]="overlayColor" [hideOverlay]="hideOverlay">
-          <ng-container *ngIf="showContent">
-            <div
-              style="width: 100%; height: 80%; display: flex; align-items: flex-start ; flex-direction: column; justify-content: flex-end; margin-bottom: auto;">
-
-                      <button type="button" class="btn btn-link " (click)="loadVideos1()">Program 1</button>
-                    <button type="button" class="btn btn-link " (click)="loadVideos()">Video 1</button>
-                    <button type="button" class="btn btn-link " (click)="loadVideos()">Program 3</button>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-2">
+              <img src='assets/master.png' height="120px">
+            </div>
+            <div class="col-sm-6">
+              <div>
+                <img class="card-img" src="assets/chat.png" height="120px"  alt="Card image">
+                <div class="card-img-overlay">
+                  <label>What do you know about the Abstraction? </label>
+                  <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
                 </div>
-          </ng-container>
-        </mat-carousel-slide>
-      </mat-carousel>
-    </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
 
-  </mat-card-content>
-</mat-card>
+            </div>
+            <div class="col-sm-6">
+              <div>
+                <img class="card-img" src="assets/chat.png" width="120px" height="120px" alt="Card image">
+                <div class="card-img-overlay">
+                  <label>This is very abstract sir!!! Couldn't explain words!!!</label>
+                  <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <img src='assets/student.png' height="120">
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+    </mat-carousel-slide>
+  </mat-carousel>
+</div>
