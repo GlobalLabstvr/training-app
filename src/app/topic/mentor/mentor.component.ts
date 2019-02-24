@@ -24,7 +24,7 @@ export class MentorComponent {
   public interval = 5000;
   public loop = true;
   public hideArrows = true;
-  public hideIndicators = true;
+  public hideIndicators = false;
   public color: ThemePalette = 'accent';
   public maxWidth = 'auto';
   public proportion = 50;
@@ -32,7 +32,7 @@ export class MentorComponent {
   public overlayColor = '#00000040';
   public hideOverlay = true;
   public useKeyboard = true;
-  public useMouseWheel = true;
+  public useMouseWheel = false;
   public orientation: Orientation = 'ltr';
 
   @ViewChildren(MatCarouselSlideComponent) public carouselSlides: QueryList<
