@@ -14,14 +14,16 @@ export class TopicService {
 
   private topicSubject = new Subject<string>();
 
+  topicAnnounced$ = this.topicSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   getVideos(id:string){
-    console.log("video url");
-    console.log(this.videoUrl+id);
     return this.http.get<Topic>(this.videoUrl+id);
   };
 
-  
+  announceTopic(topic: string) {
+    this.topicSubject.next(topic);
+  }
 
 }

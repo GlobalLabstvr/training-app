@@ -1,19 +1,3 @@
-<!-- <mat-card>
-    <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
-      [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
-      [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
-      [slides]="slides">
-      <mat-carousel-slide #matCarouselSlide *ngFor="let slide of slidesList; let i = index"
-        image="assets/abstraction-1/{{slide}}" [overlayColor]="overlayColor" [hideOverlay]="hideOverlay">
-      </mat-carousel-slide>
-    </mat-carousel>
-  </mat-card>
-  <mat-card>
-    <button type="button" class="btn btn-link " (click)="loadVideos1()">Program 1</button>
-    <button type="button" class="btn btn-link " (click)="loadVideos()">Video 1</button>
-    <button type="button" class="btn btn-link " (click)="loadVideos()">Program 3</button>
-  </mat-card>
--->
 <div class="demo-carousel">
   <mat-carousel #matCarousel [timings]="timings" [autoplay]="autoplay" [interval]="interval" [loop]="loop"
     [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
@@ -33,7 +17,8 @@
                 <img class="card-img" src="assets/chat.png" height="120px"  alt="Card image">
                 <div class="card-img-overlay">
                   <label>What do you know about the Abstraction? </label>
-                  <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
+                  <button type="button" class="btn btn-link" 
+                  (click)="loadVideos('https://www.youtube.com/embed/6V1sr0XV_Ng')">Introduction to Abstraction</button>
                 </div>
               </div>
             </div>
@@ -49,7 +34,8 @@
                 <img class="card-img" src="assets/chat.png" width="120px" height="120px" alt="Card image">
                 <div class="card-img-overlay">
                   <label>This is very abstract sir!!! Couldn't explain in words!!!</label>
-                  <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
+                  <button type="button" class="btn btn-link" 
+                  (click)="loadVideos('https://www.youtube.com/embed/RdzYOtxhuDc')">Video</button>
                 </div>
               </div>
             </div>

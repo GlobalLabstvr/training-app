@@ -26,6 +26,13 @@ export class TopicComponent implements OnInit, OnChanges{
     private route: ActivatedRoute,
     private change: ChangeDetectorRef, 
     private zone: NgZone) {
+
+      topicService.topicAnnounced$.subscribe(
+        videoUrl => {
+          console.log('vu:'+videoUrl)
+          this.loadVideos(videoUrl);
+        });
+
       this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
         
         if(route.snapshot.params['id'] !== undefined){
@@ -68,10 +75,10 @@ export class TopicComponent implements OnInit, OnChanges{
     this.subscribtion.unsubscribe();
   }
   
-  loadVideos(){
+  loadVideos(url:string){
     console.log('firee')
    // this.selectedIndex=2;
-
+    this.videoUrl = url;
    
     window.setTimeout(()=>{
 
@@ -83,7 +90,7 @@ export class TopicComponent implements OnInit, OnChanges{
       // run inside Angular
       this.zone.run(()=>{ 
         console.log('cunnrrent:'+this.selectedIndex)
-         this.selectedIndex = 2;
+         this.selectedIndex = 3;
          // force change detection
          console.log('zone')
          this.change.detectChanges();
@@ -98,7 +105,7 @@ export class TopicComponent implements OnInit, OnChanges{
     console.log('tab => ', event.tab);
     this.selectedIndex = event.index;
 
-    if(this.selectedIndex != 2){
+    if(this.selectedIndex != 3){
    this.showPlaylist = true;
    this.iframeWidth = 520;
    this.videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';

@@ -6,6 +6,7 @@ import {
   MatCarouselSlideComponent,
   Orientation
 } from '@ngmodule/material-carousel';
+import { TopicService } from '../topic.service';
 
 @Component({
   selector: 'app-mentor',
@@ -43,10 +44,15 @@ export class MentorComponent {
  
   constructor(
     private overlayContainer: OverlayContainer,
-    private elementRef: ElementRef<HTMLElement>
+    private elementRef: ElementRef<HTMLElement>,
+    private topicService: TopicService
   ) {}
 
    public resetSlides(): void {
     this.carouselSlides.forEach(item => (item.disabled = false));
+  }
+
+  loadVideos(videoUrl: string){
+    this.topicService.announceTopic(videoUrl);
   }
 }
