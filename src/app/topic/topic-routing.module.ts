@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TopicComponent } from './topic.component';
 import { TopicResolver } from './topic.resolver';
 
-const routes: Routes = [  { path:'', component: TopicComponent, resolve: {topic: TopicResolver} }];
+const routes: Routes = [  { path:' ', component: TopicComponent, resolve: {topic: TopicResolver} }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,10 +1,9 @@
-
 .sidenav {
     height: 85%;
-    width: 220px;
+    width: 200px;
     position: fixed;
     z-index: 1;
-    top: 60px;
+    top: 50px;
     left: 0;
     background-color:grey;
     overflow-x: scroll;
@@ -23,7 +22,7 @@
     color: palevioletred;
   }
 
-  #accordion{
-    width: 70%;
-    margin-left: 50%;
+  .example .mat-expansion-panel{
+    width: 90%;
+    margin-left: 05px;
   }
