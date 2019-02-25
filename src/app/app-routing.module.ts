@@ -5,7 +5,9 @@ import { HomeModule } from './home/home.module';
 const routes: Routes = [
   { path: 'home' , loadChildren: './home/home.module#HomeModule'},
   { path:'topic/:id', loadChildren: './topic/topic.module#TopicModule' },
+  { path: 'login' , loadChildren: './login/login.module#LoginModule' },
   { path: '' , redirectTo: '/home', pathMatch: 'full'},
+  
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
