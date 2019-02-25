@@ -6,6 +6,4 @@ export interface Chapter{
     description: string;
     master: Discussion;
     student: Discussion;
-} Discussion;
-    student: Discussion;
 }

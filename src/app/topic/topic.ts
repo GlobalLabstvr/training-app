@@ -5,6 +5,6 @@ export interface Topic {
     id: string;
     name: string;
     description: string;
-    playlist: [Playlist];
-    chapter: [Chapter];
+    playlist: Playlist[];
+    chapters: Chapter[];
 }
