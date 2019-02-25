@@ -21,6 +21,7 @@ export class TopicService {
   constructor(private http: HttpClient) { }
 
   getTopics(id:string){
+    console.log("consol:"+UrlConstants.topicsUrl+id);
     return this.http.get<Topic>(UrlConstants.topicsUrl+id);
   };
 
