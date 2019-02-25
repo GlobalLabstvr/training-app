@@ -4,5 +4,5 @@ export interface Discussion {
     id: string;
     name: string;
     description: string;
-    videos: [Video]
+    videos: Video[];
 }

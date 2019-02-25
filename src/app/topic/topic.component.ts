@@ -33,7 +33,7 @@ export class TopicComponent implements OnInit, OnChanges {
         this.loadVideos(videoUrl);
       });
 
-    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
+   this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
 
       if (route.snapshot.params['id'] !== undefined) {
         console.log('in topic cons' + route.snapshot.params['id'] + ":" + this.router.url);
