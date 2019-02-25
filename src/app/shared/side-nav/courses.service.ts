@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Course } from './model/course';
 import { HttpClient } from '@angular/common/http';
+import { UrlConstants } from '../model/url-constants';
 
 
 @Injectable({
@@ -9,12 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CoursesService {
 
-  coursesUrl = 'http://localhost:3000/courses'; 
-
   constructor(private http: HttpClient) { }
 
   getCourses(){
-    return this.http.get<Course[]>(this.coursesUrl)
+    return this.http.get<Course[]>(UrlConstants.coursesUrl)
   };
 
 }

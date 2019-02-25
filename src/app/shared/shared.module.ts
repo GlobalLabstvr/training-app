@@ -8,7 +8,6 @@ import { CommonMaterialModule } from './common-material/common-material.module';
 import { SafePipe } from './safe.pipe';
 import { UploadModule } from './upload/upload.module';
 
-
 @NgModule({
   declarations: [ HeaderComponent, FooterComponent, SideNavComponent , SafePipe],
   imports: [

@@ -3,14 +3,13 @@ import { Injectable } from '@angular/core';
 import { Topic } from './topic';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { UrlConstants } from '../shared/model/url-constants';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopicService {
-
-  topicUrl = 'http://localhost:3000/topics/'; 
 
   private topicSubject = new Subject<string>();
   private fetchTopicSubject = new Subject<Topic>();
@@ -23,7 +22,7 @@ export class TopicService {
   constructor(private http: HttpClient) { }
 
   getTopics(id:string){
-    return this.http.get<Topic>(this.topicUrl+id);
+    return this.http.get<Topic>(UrlConstants.topicsUrl+id);
   };
 
   announceTopic(topic: string) {
