@@ -16,11 +16,19 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     LoginRoutingModule,
     CommonMaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   declarations: [
-                SignInComponent, 
-                SignUpComponent, 
-                VerifyEmailComponent]
+    SignInComponent,
+    SignUpComponent,
+    VerifyEmailComponent
+  ],
+
+  exports: [
+    SignInComponent,
+    SignUpComponent,
+    VerifyEmailComponent
+
+  ]
 })
 export class LoginModule { }
