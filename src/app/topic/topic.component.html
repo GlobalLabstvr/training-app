@@ -1,62 +1,61 @@
 <div class="jumbotron">
 
-  <mat-tab-group class="example" [selectedIndex]="selectedIndex"
-  (selectedTabChange)="onLinkClick($event)">
+  <mat-tab-group class="example" [selectedIndex]="selectedIndex" (selectedTabChange)="onLinkClick($event)">
 
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-      Mentoring
-    </ng-template>
-    <div > 
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Mentoring
+      </ng-template>
+      <div>
         <app-mentor></app-mentor>
-    </div>
-  </mat-tab>
+      </div>
+    </mat-tab>
 
     <mat-tab>
       <ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
         Resources
       </ng-template>
-      <div > 
-          <app-upload></app-upload>
+      <div>
+        <app-upload></app-upload>
       </div>
-      <mat-accordion >
-        <mat-expansion-panel  *ngFor="let chapter of topic.chapters">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let chapter of topic.chapters">
           <mat-expansion-panel-header> <b>{{chapter.name}}</b> </mat-expansion-panel-header>
           <div class="row">
 
             <div class="col-md-12">
 
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
-                    <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
-                     <li><a [routerLink]="['/topic']">Video 1</a></li>
-                      <li><a [routerLink]="['/topic']">Video 1</a></li>
-                      <li><a [routerLink]="['/topic']">Video 1</a></li>
-                      <li><a [routerLink]="['/topic']">Video 1</a></li>
-    
-                  </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
+                <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
+                <li><a [routerLink]="['/topic']">Video 1</a></li>
+                <li><a [routerLink]="['/topic']">Video 1</a></li>
+                <li><a [routerLink]="['/topic']">Video 1</a></li>
+                <li><a [routerLink]="['/topic']">Video 1</a></li>
+
+              </mat-expansion-panel>
 
               <mat-expansion-panel>
                 <mat-expansion-panel-header> Practice Programs </mat-expansion-panel-header>
- 
-                  <li><a [routerLink]="['/topic']">Pgm1</a></li>
-                  <li><a [routerLink]="['/topic']">Pgm2</a></li>
-                  <li><a [routerLink]="['/topic']">Pgm3</a></li>
-                  <li><a [routerLink]="['/topic']">Pgm4</a></li>
+
+                <li><a [routerLink]="['/topic']">Pgm1</a></li>
+                <li><a [routerLink]="['/topic']">Pgm2</a></li>
+                <li><a [routerLink]="['/topic']">Pgm3</a></li>
+                <li><a [routerLink]="['/topic']">Pgm4</a></li>
 
               </mat-expansion-panel>
 
               <mat-expansion-panel>
                 <mat-expansion-panel-header>Documents
-                   
+
                 </mat-expansion-panel-header>
 
-                  <li><a [routerLink]="['/topic']">Doc1</a></li>
-                  <li><a [routerLink]="['/topic']">Doc2</a></li>
-                  <li><a [routerLink]="['/topic']">Doc3</a></li>
-                  <li><a [routerLink]="['/topic']">Doc4</a></li>
+                <li><a [routerLink]="['/topic']">Doc1</a></li>
+                <li><a [routerLink]="['/topic']">Doc2</a></li>
+                <li><a [routerLink]="['/topic']">Doc3</a></li>
+                <li><a [routerLink]="['/topic']">Doc4</a></li>
 
               </mat-expansion-panel>
 
@@ -78,30 +77,17 @@
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
         Programs
       </ng-template>
-      <mat-card class="sample">
+      <mat-card class="example-card">
         <mat-card-header>Abstraction code</mat-card-header>
         <mat-card-content>
-         <!-----
-          <div class="jumbotron">
-            <pre>abstract class shape</pre>&#123;<br>
-              <code>string color &#59; <br>
-              abstract double area &#40; &#41; <br>
-              public abstract String to String &#40; &#41; <br>
-              public shape &#40; String color &#41; &#123; <br>
-              System&#46;out&#46;pritnln &#40; &#34;Shape construtor called &#34;&#41; <br>
-              this&#46;color = color; <br>
-              &#123; <br>
-
-              public String getColor&#40; &#41; &#123;
-
-              </code>
-                       
-             </div>--->
-             <div highlightChildren class="children">
-             <pre><code [textContent]="code"></code></pre></div>
+          <div class="anyClass">
+          <div highlightChildren class="children">
+            <pre><code [textContent]="code"></code></pre>
+          </div>
+          </div>
         </mat-card-content>
-        </mat-card>
-      
+      </mat-card>
+
     </mat-tab>
 
     <mat-tab>
