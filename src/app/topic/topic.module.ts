@@ -7,7 +7,10 @@ import { TopicResolver } from './topic.resolver';
 import { CommonMaterialModule } from '../shared/common-material/common-material.module';
 import { SharedModule } from '../shared/shared.module';
 import { UploadModule } from '../shared/upload/upload.module';
-import { MentorComponent } from './mentor/mentor.component';
+import { MentorComponent } from './mentor/mentor.component'; 
+import { HighlightModule } from 'ngx-highlightjs';
+
+
 
 @NgModule({
   declarations: [ TopicComponent, MentorComponent ],
@@ -16,8 +19,13 @@ import { MentorComponent } from './mentor/mentor.component';
     SharedModule,
     TopicRoutingModule,
     CommonMaterialModule,
-    UploadModule
+    UploadModule,
+    HighlightModule
+    
   ],
   providers: [TopicResolver]
 })
-export class TopicModule { }
+export class TopicModule {
+ 
+ }
+ 

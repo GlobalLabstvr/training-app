@@ -11,6 +11,20 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import xml from 'highlight.js/lib/languages/xml';
+import scss from 'highlight.js/lib/languages/scss';
+import typescript from 'highlight.js/lib/languages/typescript';
+import javascript from 'highlight.js/lib/languages/javascript';
+
+export function hljsLanguages() {
+  return[
+    {name: 'typescript', func: typescript},
+    {name: 'scss', func: scss},
+    {name: 'xml', func: xml},
+    {name: 'javascript', func: javascript}
+  ];
+ }
 
 @NgModule({
   declarations: [
@@ -26,9 +40,18 @@ import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fi
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HighlightModule
+    
   ],
-  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} },
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        languages: hljsLanguages,
+      
+      }
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

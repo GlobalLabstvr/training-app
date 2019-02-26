@@ -20,7 +20,7 @@ export class TopicComponent implements OnInit, OnChanges {
   selectedIndex = 0;
   showPlaylist: boolean = true;
   iframeWidth = 520;
-
+  code = "abstract class shape"
   constructor(private topicService: TopicService,
     private router: Router,
     private route: ActivatedRoute,
@@ -111,6 +111,6 @@ export class TopicComponent implements OnInit, OnChanges {
       this.videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
     }
 
-
+    
   }
 }
