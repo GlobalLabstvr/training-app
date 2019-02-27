@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Topic } from './topic';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { UrlConstants } from '../shared/model/url-constants';
+import { APIConstants } from '../shared/model/api-constants';
 
 
 @Injectable({
@@ -21,8 +21,7 @@ export class TopicService {
   constructor(private http: HttpClient) { }
 
   getTopics(id:string){
-    console.log("consol:"+UrlConstants.topicsUrl+id);
-    return this.http.get<Topic>(UrlConstants.topicsUrl+id);
+    return this.http.get<Topic>(APIConstants.topicsUrl+id);
   };
 
   announceTopic(topic: string) {

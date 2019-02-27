@@ -1,19 +1,21 @@
-import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone, OnChanges, ViewEncapsulation } from '@angular/core';
 import { TopicService } from './topic.service';
 import { Topic } from './topic';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Subscription, Subject } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
+import { HighlightResult } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-topic',
   templateUrl: './topic.component.html',
-  styleUrls: ['./topic.component.css']
+  styleUrls: ['./topic.component.css'],
+
 })
 export class TopicComponent implements OnInit, OnChanges {
   @Input()
   videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
-
+  response: HighlightResult;
   topic: Topic;
   show: boolean = false;
   subscribtion: Subscription;
@@ -184,5 +186,15 @@ export class TopicComponent implements OnInit, OnChanges {
     }
 
     
+  }
+
+  onHighlight(e) {
+    this.response = {
+      language: e.language,
+      r: e.r,
+      second_best: '{...}',
+      top: '{...}',
+      value: '{...}'
+    }
   }
 }

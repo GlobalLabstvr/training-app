@@ -1,3 +1,4 @@
+@import '~highlight.js/styles/github.css';
 .anyClass {
     height:400px;
     overflow-y: scroll;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Course } from './model/course';
 import { HttpClient } from '@angular/common/http';
-import { UrlConstants } from '../model/url-constants';
+import { APIConstants } from '../model/api-constants';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class CoursesService {
   constructor(private http: HttpClient) { }
 
   getCourses(){
-    return this.http.get<Course[]>(UrlConstants.coursesUrl)
+    return this.http.get<Course[]>(APIConstants.coursesUrl)
   };
 
 }
