@@ -74,10 +74,7 @@
         <mat-card-header>Abstraction code</mat-card-header>
         <mat-card-content>
           <div class="anyClass">
-            <div highlightChildren>
-              <pre><code [textContent]="code1"></code></pre>
-              <pre><code [textContent]="code"></code></pre>
-            </div>
+            <pre><code [highlight]="code" (highlighted)="onHighlight($event)"></code></pre>
           </div>
         </mat-card-content>
       </mat-card>

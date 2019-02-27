@@ -47,18 +47,12 @@ export function hljsLanguages() {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    HighlightModule,
+    HighlightModule.forRoot({ languages: hljsLanguages })
 
   ],
   providers: [
     {
       provide: FirestoreSettingsToken, useValue: {}
-    },
-    {
-      provide: HIGHLIGHT_OPTIONS,
-      useValue: {
-        languages: hljsLanguages
-      }
     },
     RequestCache,
     {

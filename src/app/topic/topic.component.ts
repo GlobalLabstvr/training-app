@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, ChangeDetectorRef, NgZone, OnChang
 import { TopicService } from './topic.service';
 import { Topic } from './topic';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { Subscription, Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { HighlightResult } from 'ngx-highlightjs';
 
