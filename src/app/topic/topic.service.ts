@@ -10,13 +10,11 @@ import { APIConstants } from '../shared/model/api-constants';
 })
 export class TopicService {
 
-  private topicSubject = new Subject<string>();
-  private fetchTopicSubject = new Subject<Topic>();
+  private videoSubject = new Subject<string>();
+  private topicSubject = new Subject<Topic>();
 
+  videoAnnounced$ = this.videoSubject.asObservable();
   topicAnnounced$ = this.topicSubject.asObservable();
-  topicFetched$ = this.fetchTopicSubject.asObservable();
-
-  topic: Topic;
 
   constructor(private http: HttpClient) { }
 
@@ -24,13 +22,12 @@ export class TopicService {
     return this.http.get<Topic>(APIConstants.topicsUrl+id);
   };
 
-  announceTopic(topic: string) {
-    this.topicSubject.next(topic);
+  announceVideo(videoUrl: string) {
+    this.videoSubject.next(videoUrl);
   }
 
-  setTopic(topic:Topic){
-    this.topic = topic;
-    this.fetchTopicSubject.next(topic);
+  announceTopic(topic:Topic){
+    this.topicSubject.next(topic);
   }
 
 }

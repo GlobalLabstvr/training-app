@@ -49,7 +49,7 @@ export class MentorComponent {
     private elementRef: ElementRef<HTMLElement>,
     private topicService: TopicService
   ) {
-    topicService.topicFetched$.subscribe(
+    topicService.topicAnnounced$.subscribe(
       topic => {
         this.topic = topic;
        });
@@ -61,6 +61,6 @@ export class MentorComponent {
 
   loadVideos(videoUrl: string){
     console.log('load vide:'+videoUrl)
-    this.topicService.announceTopic(videoUrl);
+    this.topicService.announceVideo(videoUrl);
   }
 }

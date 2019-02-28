@@ -13,7 +13,6 @@ export class TopicResolver implements Resolve<any> {
     constructor(private topicService: TopicService) { }
 
     resolve(route: ActivatedRouteSnapshot) : Observable<Topic>{
-        console.log('getvalue');
         return this.topicService.getTopics(route.params['id']);
     }
 
