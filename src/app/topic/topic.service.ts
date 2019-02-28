@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Topic } from './topic';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { APIConstants } from '../shared/model/api-constants';
 
 
@@ -28,6 +28,11 @@ export class TopicService {
 
   announceTopic(topic:Topic){
     this.topicSubject.next(topic);
+  }
+
+  getFile(name:string){
+    return this.http.get('assets/program1.txt', { responseType: 'text' });
+   
   }
 
 }

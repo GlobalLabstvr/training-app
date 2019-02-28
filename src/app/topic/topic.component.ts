@@ -31,21 +31,16 @@ export class TopicComponent implements OnInit {
 
     topicService.videoAnnounced$.subscribe(
       videoUrl => {
-        console.log('vu:' + videoUrl)
         this.loadVideos(videoUrl);
       });
 
 
 
    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
-
       if (this.route.snapshot.data['topic'] !== undefined) {
-        console.log('in topic cons' + route.snapshot.params['id'] + ":" + this.router.url);
         this.topic = this.route.snapshot.data['topic'];
         this.topicService.announceTopic(this.topic);
-      }
-      else {
-        console.log('navigation started:' + this.router.url)
+        console.log(this.topic);
       }
     });
   }
@@ -53,13 +48,6 @@ export class TopicComponent implements OnInit {
   ngOnInit() {
     this.topic = this.route.snapshot.data['topic'];
   }
-
- /* getTopics(id: string): void {
-    this.topicService.getTopics(id)
-      .subscribe(topic => {
-        this.topic = topic;
-      });
-  }*/
 
   showVideo(url: string) {
     this.videoUrl = url;
@@ -75,17 +63,11 @@ export class TopicComponent implements OnInit {
 
   loadVideos(url: string) {
     console.log('firee')
-    // this.selectedIndex=2;
     this.videoUrl = url;
-
     window.setTimeout(() => {
-
-      this.showPlaylist = true;
-
       this.showPlaylist = false;
       this.iframeWidth = 800;
 
-      // run inside Angular
       this.zone.run(() => {
         console.log('cunnrrent:' + this.selectedIndex)
         this.selectedIndex = 3;
@@ -94,22 +76,17 @@ export class TopicComponent implements OnInit {
         this.change.detectChanges();
       });
     });
-
   }
 
   onLinkClick(event: MatTabChangeEvent) {
-    console.log('event => ', event);
     console.log('index => ', event.index);
-    console.log('tab => ', event.tab);
     this.selectedIndex = event.index;
-
     if (this.selectedIndex != 3) {
+      console.log('index===========> ', event.index);
       this.showPlaylist = true;
       this.iframeWidth = 520;
-      this.videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
+      this.videoUrl = this.topic.playlist[0].url;
     }
-
-    
   }
 
   onHighlight(e) {
@@ -120,6 +97,12 @@ export class TopicComponent implements OnInit {
       top: '{...}',
       value: '{...}'
     }
+  }
+
+  showProgram(name:string){
+    this.topicService.getFile(name).subscribe(data => {
+      this.code = data;
+    });;
   }
 
   code = `
