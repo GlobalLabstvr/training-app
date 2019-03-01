@@ -2,44 +2,66 @@
 	"courses": [
 		{
 			"id": "1",
+			"name": "Java Environment Basics",
+			"description": "Java Environment",
+			"subject": [
+				{
+					"id": "1",
+					"name": "Set the Path Variable",
+					"description": "Set the Path Variable"
+				},
+				{
+					"id": "2",
+					"name": "Set the Classpath Variable",
+					"description": "set the Classpath variable"
+				}
+			]
+		},
+		{
+			"id": "2",
 			"name": "OOPs",
 			"description": "Object Oriented Programming",
 			"subject": [
 				{
 					"id": "1",
+					"name": "Introduction",
+					"description": "Introduction to OOPs"
+				},
+				{
+					"id": "2",
 					"name": "Abstraction",
 					"description": "Abstraction desc"
 				},
 				{
-					"id": "2",
+					"id": "3",
 					"name": "Encapsulation",
 					"description": "Encapsulation desc"
 				},
 				{
-					"id": "3",
+					"id": "4",
 					"name": "Inheritance",
 					"description": "desc"
 				},
 				{
-					"id": "4",
+					"id": "5",
 					"name": "Polymorphism",
 					"description": "desc"
 				},
 				{
-					"id": "5",
+					"id": "6",
 					"name": "Overloading",
 					"description": "desc"
 				},
 				{
-					"id": "6",
+					"id": "7",
 					"name": "Overriding",
 					"description": "desc"
 				}
 			]
 		},
 		{
-			"id": "2",
-			"name": "Java",
+			"id": "3",
+			"name": "Socket Programming",
 			"description": "Object Oriented Programming",
 			"subject": [
 				{
@@ -80,7 +102,6 @@
 			"id": "1",
 			"name": "abstraction",
 			"description": "description",
-			
 			"programs": [
 				{
 					"id": "1",
@@ -131,8 +152,6 @@
 					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
 				}
 			],
-
-
 			"playlist": [
 				{
 					"id": "1",
@@ -183,26 +202,22 @@
 					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
 				}
 			],
-			"chapters": [
+			"slides": [
 				{
-					"id" : "1",
-					"name" : "slide 1",
-					"description" : "slide 1",
+					"id": "1",
+					"name": "slide 1",
+					"description": "slide 1",
 					"master": {
 						"id": "1",
 						"name": "Abstraction",
 						"description": "What do you know about the Abstraction?",
-						"videos": [
-							
-						],
+						"videos": [],
 						"programs": [
 							{
-								
-									"id": "1",
-									"name": "Introduction to Abstraction",
-									"description": "What do you know about the Abstraction?",
-									"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
-								
+								"id": "1",
+								"name": "Introduction to Abstraction",
+								"description": "What do you know about the Abstraction?",
+								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
 							}
 						],
 						"documents": [
@@ -213,13 +228,11 @@
 							}
 						]
 					},
-					"student" :{
+					"student": {
 						"id": "1",
 						"name": "Abstraction",
 						"description": "This is very abstract concept sir... Can't explain in words...",
-						"videos": [
-							
-						],
+						"videos": [],
 						"programs": [
 							{
 								"id": "1",
@@ -237,26 +250,21 @@
 					}
 				},
 				{
-					"id" : "2",
-					"name" : "slide 2",
-					"description" : "slide 2",
+					"id": "1",
+					"name": "slide 1",
+					"description": "slide 1",
 					"master": {
 						"id": "1",
 						"name": "Abstraction",
-						"description": "Excellent!!! Watch the below Video",
-						"videos": [
+						"description": "What do you know about the Abstraction?",
+						"videos": [],
+						"programs": [
 							{
-								
 								"id": "1",
 								"name": "Introduction to Abstraction",
 								"description": "What do you know about the Abstraction?",
 								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
-							
-						}
-							
-						],
-						"programs": [
-							
+							}
 						],
 						"documents": [
 							{
@@ -266,16 +274,251 @@
 							}
 						]
 					},
-					"student" :{
+					"student": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "This is very abstract concept sir... Can't explain in words...",
+						"videos": [],
+						"programs": [
+							{
+								"id": "1",
+								"name": "Abstraction link",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					}
+				},
+				{
+					"id": "2",
+					"name": "slide 2",
+					"description": "slide 2",
+					"master": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "Excellent!!! Watch the below Video",
+						"videos": [
+							{
+								"id": "1",
+								"name": "Introduction to Abstraction",
+								"description": "What do you know about the Abstraction?",
+								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+							}
+						],
+						"programs": [],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					},
+					"student": {
 						"id": "1",
 						"name": "Abstraction",
 						"description": "Ok Sir...",
-						"videos": [
-							
-						],
+						"videos": [],
+						"programs": [],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"id": "1",
+			"name": "abstraction",
+			"description": "description",
+			"programs": [
+				{
+					"id": "1",
+					"name": "Program 1",
+					"description": "Biological neuron",
+					"url": "Abstraction.java"
+				},
+				{
+					"id": "2",
+					"name": "Program 2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Program 3",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Program 4",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Program 5",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Program 6",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Program 7",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Program 8",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				}
+			],
+			"playlist": [
+				{
+					"id": "1",
+					"name": "Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				},
+				{
+					"id": "1",
+					"name": "Lec 1.1",
+					"description": "Biological neuron",
+					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
+				},
+				{
+					"id": "2",
+					"name": "Lec 1.2",
+					"description": "Spring to Winter of AI",
+					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+				}
+			],
+			"slides": [
+				{
+					"id": "1",
+					"name": "slide 1",
+					"description": "slide 1",
+					"master": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "What do you know about the Abstraction?",
+						"videos": [],
 						"programs": [
-							
+							{
+								"id": "1",
+								"name": "Introduction to Abstraction",
+								"description": "What do you know about the Abstraction?",
+								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+							}
 						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					},
+					"student": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "This is very abstract concept sir... Can't explain in words...",
+						"videos": [],
+						"programs": [
+							{
+								"id": "1",
+								"name": "Abstraction link",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					}
+				},
+				{
+					"id": "2",
+					"name": "slide 2",
+					"description": "slide 2",
+					"master": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "Excellent!!! Watch the below Video",
+						"videos": [
+							{
+								"id": "1",
+								"name": "Introduction to Abstraction",
+								"description": "What do you know about the Abstraction?",
+								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+							}
+						],
+						"programs": [],
+						"documents": [
+							{
+								"id": "1",
+								"name": "Abstraction docs",
+								"url": "https://youtu.be/zZq_XDhU-rc"
+							}
+						]
+					},
+					"student": {
+						"id": "1",
+						"name": "Abstraction",
+						"description": "Ok Sir...",
+						"videos": [],
+						"programs": [],
 						"documents": [
 							{
 								"id": "1",

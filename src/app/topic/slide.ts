@@ -1,6 +1,6 @@
 import { Discussion } from './discussion';
 
-export interface Chapter{
+export interface Slide {
     id: string;
     name: string;
     description: string;

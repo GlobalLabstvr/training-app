@@ -1,10 +1,10 @@
-import { Playlist } from './Playlist';
-import { Chapter } from './Chapter';
+import { Playlist } from './playlist';
+import { Slide } from './slide';
 
 export interface Topic {
     id: string;
     name: string;
     description: string;
     playlist: Playlist[];
-    chapters: Chapter[];
+    slides: Slide[];
 }

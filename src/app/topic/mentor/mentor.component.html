@@ -4,7 +4,7 @@
     [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
     [slides]="slides">
     <mat-carousel-slide #matCarouselSlide 
-      *ngFor="let chapter of topic.chapters; let i = index" [hideOverlay]="hideOverlay"
+      *ngFor="let slide of topic.slides; let i = index" [hideOverlay]="hideOverlay"
       image="assets/demo.png">
       <ng-container>
 
@@ -17,7 +17,7 @@
               <div>
                 <img class="card-img" src="assets/chat.png" height="120px"  alt="Card image">
                 <div class="card-img-overlay">
-                  <label> {{chapter.master.description}} </label>
+                  <label> {{slide.master.description}} </label>
                   <button type="button" class="btn btn-link" 
                   *ngFor = "let video of chapter.master.videos; let i = index"
                   (click)="loadVideos(video.url)">{{video.name}}</button>
@@ -35,7 +35,7 @@
               <div>
                 <img class="card-img" src="assets/chat.png" width="120px" height="120px" alt="Card image">
                 <div class="card-img-overlay">
-                  <label>{{chapter.student.description}}</label>
+                  <label>{{slide.student.description}}</label>
                   <button type="button" class="btn btn-link" 
                   *ngFor = "let video of chapter.student.videos; let i = index"
                   (click)="loadVideos(video.url)">video.name</button>
