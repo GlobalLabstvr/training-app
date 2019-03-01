@@ -100,8 +100,8 @@
 	"topics": [
 		{
 			"id": "1",
-			"name": "abstraction",
-			"description": "description",
+			"name": "Java Environment Setup",
+			"description": "Java Environment Setup",
 			"programs": [
 				{
 					"id": "1",
@@ -209,22 +209,27 @@
 					"description": "slide 1",
 					"master": {
 						"id": "1",
-						"name": "Abstraction",
-						"description": "What do you know about the Abstraction?",
-						"videos": [],
-						"programs": [
+						"name": "Java Path",
+						"description": "For running java application, first we need to know how to set the path...",
+						"videos": [
 							{
 								"id": "1",
-								"name": "Introduction to Abstraction",
-								"description": "What do you know about the Abstraction?",
+								"name": "Setting up the Java Path",
+								"description": "Setting up the Java Path",
 								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+							}	
+						],
+						"programs": [
+							{
+								
 							}
 						],
 						"documents": [
 							{
 								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
+								"name": "Setting up the Java Path",
+								"description" : "Setting up the Java Path",
+								"url": "https://www.javatpoint.com/how-to-set-path-in-java"
 							}
 						]
 					},

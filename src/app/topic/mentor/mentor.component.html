@@ -19,7 +19,7 @@
                 <div class="card-img-overlay">
                   <label> {{slide.master.description}} </label>
                   <button type="button" class="btn btn-link" 
-                  *ngFor = "let video of chapter.master.videos; let i = index"
+                  *ngFor = "let video of slide.master.videos; let i = index"
                   (click)="loadVideos(video.url)">{{video.name}}</button>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <div class="card-img-overlay">
                   <label>{{slide.student.description}}</label>
                   <button type="button" class="btn btn-link" 
-                  *ngFor = "let video of chapter.student.videos; let i = index"
+                  *ngFor = "let video of slide.student.videos; let i = index"
                   (click)="loadVideos(video.url)">video.name</button>
                 </div>
               </div>
