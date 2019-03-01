@@ -30,8 +30,8 @@ export class TopicService {
     this.topicSubject.next(topic);
   }
 
-  getFile(name:string){
-    return this.http.get('assets/program1.txt', { responseType: 'text' });
+  getFile(url:string){
+    return this.http.get(url, { responseType: 'text' });
    
   }
 
