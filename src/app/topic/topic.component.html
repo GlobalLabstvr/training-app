@@ -12,58 +12,7 @@
       </div>
     </mat-tab>
 
-    <mat-tab>
-      <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        Resources
-      </ng-template>
-      <div>
-        <app-upload></app-upload>
-      </div>
-      <mat-accordion>
-        <mat-expansion-panel *ngFor="let slide of topic.slides">
-          <mat-expansion-panel-header> <b>{{slide.name}}</b> </mat-expansion-panel-header>
-          <div class="row">
-
-            <div class="col-md-12">
-
-              <mat-expansion-panel>
-                <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
-                <button type="button" class="btn btn-link" (click)="loadVideos()">My Link</button>
-                <li><a [routerLink]="['/topic']">Video 1</a></li>
-                <li><a [routerLink]="['/topic']">Video 1</a></li>
-                <li><a [routerLink]="['/topic']">Video 1</a></li>
-                <li><a [routerLink]="['/topic']">Video 1</a></li>
-
-              </mat-expansion-panel>
-
-              <mat-expansion-panel>
-                <mat-expansion-panel-header> Practice Programs </mat-expansion-panel-header>
-
-                <li><a [routerLink]="['/topic']">Pgm1</a></li>
-                <li><a [routerLink]="['/topic']">Pgm2</a></li>
-                <li><a [routerLink]="['/topic']">Pgm3</a></li>
-                <li><a [routerLink]="['/topic']">Pgm4</a></li>
-
-              </mat-expansion-panel>
-
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>Documents
-
-                </mat-expansion-panel-header>
-
-                <li><a [routerLink]="['/topic']">Doc1</a></li>
-                <li><a [routerLink]="['/topic']">Doc2</a></li>
-                <li><a [routerLink]="['/topic']">Doc3</a></li>
-                <li><a [routerLink]="['/topic']">Doc4</a></li>
-
-              </mat-expansion-panel>
-
-            </div>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-tab>
+    
 
     <mat-tab>
       <ng-template mat-tab-label>
@@ -72,36 +21,29 @@
       </ng-template>
 
       <div class="row">
-          <div class="col-sm-8">
-              <mat-card class="example-card">
-                  <mat-card-header>Abstraction code</mat-card-header>
-                  <mat-card-content>
-                    <div class="anyClass">
-                      <pre><code [highlight]="code" (highlighted)="onHighlight($event)"></code></pre>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
-          </div>
-          <div class="col-sm-4">
-            <div class="anyClass">
-              <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action active">
-                  {{topic.name}}
-                </button>
-                <button type="button" class="list-group-item list-group-item-action" *ngFor="let program of topic.programs"
-                  (click)="showProgram(program.url)"> {{program.name}}
-                </button>
+        <div class="col-sm-8">
+          <mat-card class="example-card">
+            <mat-card-header>Abstraction code</mat-card-header>
+            <mat-card-content>
+              <div class="anyClass">
+                <pre><code [highlight]="code" (highlighted)="onHighlight($event)"></code></pre>
               </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-sm-4">
+          <div class="anyClass">
+            <div class="list-group">
+              <button type="button" class="list-group-item list-group-item-action active">
+                {{topic.name}}
+              </button>
+              <button type="button" class="list-group-item list-group-item-action"
+                *ngFor="let program of topic.programs" (click)="showProgram(program.url)"> {{program.name}}
+              </button>
             </div>
           </div>
         </div>
-
-
-
-
-
-     
-
+      </div>
     </mat-tab>
 
     <mat-tab>
@@ -112,7 +54,7 @@
 
       <div class="row">
         <div class="col-sm-8">
-          <iframe [width]="iframeWidth" height="400" [src]="videoUrl | safe " frameborder="0" 
+          <iframe [width]="iframeWidth" height="400" [src]="videoUrl | safe " frameborder="0"
             style="background:grey; align-content: center"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -143,6 +85,46 @@
       <mat-card class="sample">Differentiate Overloading and Overriding</mat-card>
 
     </mat-tab>
+
+    <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+          Resources
+        </ng-template>
+        <div>
+          <app-upload></app-upload>
+        </div>
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let slide of topic.slides">
+            <mat-expansion-panel-header> <b>{{slide.name}}</b> </mat-expansion-panel-header>
+            <div class="row">
+              <div class="col-md-12">
+                <mat-expansion-panel *ngIf="slide.master.videos.length>0">
+                  <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
+                  <button type="button" class="btn btn-link" *ngFor="let video of slide.master.videos; let i = index"
+                    (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
+                    {{topic.playlist[getVideoIndex(video.id)].name}}</button>
+                </mat-expansion-panel>
+  
+                <mat-expansion-panel  *ngIf="slide.master.programs.length>0">
+                  <mat-expansion-panel-header> Practice Programs </mat-expansion-panel-header>
+                  <button type="button" class="btn btn-link" 
+                    *ngFor="let program of slide.master.programs; let i = index"
+                  (click)="showProgram(program.url)">{{program.name}}</button>
+                </mat-expansion-panel>
+
+                <mat-expansion-panel  *ngIf="slide.master.programs.length>0">
+                    <mat-expansion-panel-header> Visit Sites </mat-expansion-panel-header>
+                    <button type="button" class="btn btn-link" 
+                      *ngFor="let program of slide.master.programs; let i = index"
+                    (click)="showProgram(program.url)">{{program.name}}</button>
+                  </mat-expansion-panel> 
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-tab>
+
   </mat-tab-group>
 
 </div>

@@ -17,9 +17,9 @@ import { Topic } from '../topic';
 export class MentorComponent {
 
 
-  public slidesList = ['Slide1.PNG', 
-                        'Slide2.PNG'
-                    ];
+  public slidesList = ['Slide1.PNG',
+    'Slide2.PNG'
+  ];
 
   public timings = '250ms ease-in';
   public autoplay = false;
@@ -44,34 +44,45 @@ export class MentorComponent {
 
   topic: Topic;
   height: number;
- 
+
   constructor(
     private overlayContainer: OverlayContainer,
     private elementRef: ElementRef<HTMLElement>,
     private topicService: TopicService
   ) {
     topicService.topicAnnounced$.subscribe(
-      topic => {
+    (topic : Topic) => {
         this.topic = topic;
-       });
+      });
   }
 
-  getHeight(description:string, videos:any){
-    console.log("vid:");
-    console.log(videos);
+  getHeight(master: any) {
     length = 0;
-    if(videos!== undefined && videos.length>0){
-      length = videos.length*50;
+    if (master.description !== undefined) {
+      var desc: string = master.description;
+
+      if (master.videos !== undefined && Object.keys(master.videos).length > 0) {
+        length = Object.keys(master.videos).length * 50;
+      }
+      if (master.programs !== undefined && Object.keys(master.programs).length > 0) {
+        length += Object.keys(master.programs).length * 50;
+      }
+      length = desc.length > 100 ? (desc.length * 0.8 + length) : 100;
     }
-    return description.length>100? (description.length*0.8+length):100;
+    return length;
   }
 
-   public resetSlides(): void {
+  public resetSlides(): void {
     this.carouselSlides.forEach(item => (item.disabled = false));
   }
 
-  loadVideos(videoUrl: string){
-    console.log('load vide:'+videoUrl)
+  loadVideos(videoUrl: string) {
+    console.log('load vide:' + videoUrl)
     this.topicService.announceVideo(videoUrl);
   }
+
+  getVideoIndex(id:string){
+    return this.topicService.getVideoIndex(this.topic,id);
+  }
+
 }

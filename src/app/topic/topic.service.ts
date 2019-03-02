@@ -32,7 +32,19 @@ export class TopicService {
 
   getFile(url:string){
     return this.http.get(url, { responseType: 'text' });
-   
+  }
+
+   //TODO repetitive
+   getVideoIndex(topic:Topic,id:string){
+    var count = -1;
+    for (let video of topic.playlist) {
+      if(video.id === id){
+        count++;
+        return count;
+      }
+      count++;
+     }
+     return count;
   }
 
 }

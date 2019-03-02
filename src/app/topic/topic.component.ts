@@ -40,8 +40,8 @@ export class TopicComponent implements OnInit {
    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
       if (this.route.snapshot.data['topic'] !== undefined) {
         this.topic = this.route.snapshot.data['topic'];
-        this.topicService.announceTopic(this.topic);
         console.log(this.topic);
+        this.topicService.announceTopic(this.topic);
       }
     });
   }
@@ -63,7 +63,8 @@ export class TopicComponent implements OnInit {
   }
 
   loadVideos(url: string) {
-    console.log('firee')
+    console.log('firee:'+url)
+    console.log(this.topic.playlist)
     this.videoUrl = url;
     window.setTimeout(() => {
       this.showPlaylist = false;
@@ -71,7 +72,7 @@ export class TopicComponent implements OnInit {
 
       this.zone.run(() => {
         console.log('cunnrrent:' + this.selectedIndex)
-        this.selectedIndex = 3;
+        this.selectedIndex = 2;
         // force change detection
         console.log('zone')
         this.change.detectChanges();
@@ -81,12 +82,12 @@ export class TopicComponent implements OnInit {
 
   onLinkClick(event: MatTabChangeEvent) {
     console.log('index => ', event.index);
-    this.selectedIndex = event.index;
-    if (this.selectedIndex != 3) {
+        this.selectedIndex = event.index;
+    if (this.selectedIndex != 2) {
       console.log('index===========> ', event.index);
       this.showPlaylist = true;
       this.iframeWidth = 520;
-      this.videoUrl = this.topic.playlist[0].url;
+      this.videoUrl = '';
     }
   }
 
@@ -107,4 +108,9 @@ export class TopicComponent implements OnInit {
       this.code = data;
     });;
   }
+  
+  getVideoIndex(id:string){
+    return this.topicService.getVideoIndex(this.topic,id);
+  }
+
 }

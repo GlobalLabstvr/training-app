@@ -25,9 +25,10 @@ export class SideNavComponent implements OnInit {
 
     getCourses(): void {
       this.coursesService.getCourses()
-        .subscribe(courses => {this.courses = courses
-          console.log(this.courses);
-        });
+        .subscribe(courses => 
+          {
+            this.courses = courses
+          });
     }
 
 }

@@ -3,7 +3,9 @@
     [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
     [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
     [slides]="slides">
-    <mat-carousel-slide #matCarouselSlide *ngFor="let slide of topic.slides; let i = index" [hideOverlay]="hideOverlay"
+    <mat-carousel-slide #matCarouselSlide 
+      *ngFor="let slide of topic.slides; let i = index" 
+      [hideOverlay]="hideOverlay"
       image="assets/demo.png">
       <ng-container>
 
@@ -13,32 +15,57 @@
               <img src='assets/master.png' height="120px">
             </div>
             <div class="col-sm-8">
-              <div >
-                <img class="card-img" src="assets/chat.png" 
-                  [height]='getHeight(slide.master.description,slide.master.videos)'
-                  alt="Card image">
+              <div>
+                <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.master)' alt="Card image">
                 <div class="card-img-overlay">
                   <label> {{slide.master.description}} </label>
-                  <label *ngIf="slide.master.videos?.length>0">See this Video</label>
-                  <button type="button" class="btn btn-link" *ngFor="let video of slide.master.videos; let i = index"
-                    (click)="loadVideos(video.url)">{{video.name}}</button>
+                  <div class="row">
+                    <div class="col">
+                      <label *ngIf="slide.master.videos?.length>0">See this Video</label>
+                      <button type="button" class="btn btn-link"
+                        *ngFor="let video of slide.master.videos; let i = index"
+                        (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
+                          {{topic?.playlist[getVideoIndex(video.id)]?.name}}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label *ngIf="slide.master.programs?.length>0">Refer this Site</label>
+                      <a *ngFor="let program of slide.master.programs; let i = index" target="_blank"
+                        href="{{topic.programs[program.id]?.url}}">&nbsp;{{topic.programs[program.id]?.name}}</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            
           </div>
           <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-              <div>
-                <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.student.description)' 
-                  alt="Card image">
-                <div class="card-img-overlay">
-                  <label>{{slide.student.description}}</label>
-                  <button type="button" class="btn btn-link" *ngFor="let video of slide.student.videos; let i = index"
-                    (click)="loadVideos(video.url)">{{video.description}}</button>
-                </div>
-              </div>
+                <div>
+                    <img class="card-img" src="assets/chat.png" 
+                      [height]='getHeight(slide.student)' alt="Card image">
+                    <div class="card-img-overlay">
+                      <label> {{slide.student.description}} </label>
+                      <div class="row">
+                        <div class="col">
+                          <label *ngIf="slide.student.videos?.length>0">See this Video</label>
+                          <button type="button" class="btn btn-link"
+                            *ngFor="let video of slide.student.videos; let i = index"
+                            (click)="loadVideos(video.url)">{{video.name}}</button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <label *ngIf="slide.student.programs?.length>0">See this Site </label>
+                          <a *ngFor="let program of slide.student.programs; let i = index" target="_blank"
+                            href="{{program.url}}">{{program.name}}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
             <div class="col-sm-2">
               <img src='assets/student.png' height="120">

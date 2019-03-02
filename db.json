@@ -97,11 +97,25 @@
 			"id": "11",
 			"name": "Java Environment Setup",
 			"description": "Java Environment Setup",
-			"programs": [
-			],
+			
 			"playlist": [
-				
+				{
+					"id": "1",
+					"name": "Setting up the Java Path",
+					"description": "Setting up the Java and Class Path",
+					"url": "https://www.youtube.com/embed/vhBNV8no4CI"
+				}
 			],
+			"programs": [],
+			"sites" : [
+				{
+					"id": "1",
+					"name": "Java Environment Setup",
+					"description": "Java Environment Setup",
+					"url" : "https://www.sitesbay.com/java/java-classpath-setting"
+				}
+			],
+			"documents":[],
 			"slides": [
 				{
 					"id": "1",
@@ -114,29 +128,23 @@
 							"For running java application, first we need to know how to set both JAVA path and Class Path environment variables.",
 						"videos": [
 							{
-								"id": "1",
-								"name": "Setting up the Java Path",
-								"description": "Setting up the Java and Class Path",
-								"url": "https://www.youtube.com/embed/vhBNV8no4CI"
-							}	
+								"id": "1"
+							}
 						],
 						"programs": [
-						
+
 						],
-						"documents": [
-						]
+						"sites": [
+						],
+						"documents":[]
 					},
 					"student": {
 						"id": "1",
 						"name": "Setting up path",
 						"description": "Ok Sir",
 						"videos": [],
-						"programs": [
-							
-						],
-						"documents": [
-							
-						]
+						"programs": [],
+						"documents": []
 					}
 				}
 			]
@@ -148,8 +156,15 @@
 			"programs": [
 			],
 			"playlist": [
-				
+				{
+					"id": "1",
+					"name": "POPs vs OOPs",
+					"description": "POPs vs OOPs",
+					"url": "https://www.youtube.com/embed/70sld4fYcqU"
+				}	
 			],
+			"sites":[],
+			"documents":[],
 			"slides": [
 				{
 					"id": "1",
@@ -162,10 +177,7 @@
 							"To understand OOPs concepts, first we need to know the difference between \n Procedural Oriented Programming and Object Oriented Programming",
 						"videos": [
 							{
-								"id": "1",
-								"name": "POPs vs OOPs",
-								"description": "POPs vs OOPs",
-								"url": "https://www.youtube.com/embed/70sld4fYcqU"
+								"id": "1"
 							}	
 						],
 						"programs": [
@@ -179,12 +191,9 @@
 						"name": "Introduction to OOPs",
 						"description": "Ok Sir",
 						"videos": [],
-						"programs": [
-							
-						],
-						"documents": [
-							
-						]
+						"programs": [],
+						"documents": [],
+						"sites":[]
 					}
 				}
 			]
