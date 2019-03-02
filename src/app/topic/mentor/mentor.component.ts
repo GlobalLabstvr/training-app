@@ -43,6 +43,7 @@ export class MentorComponent {
   public darkMode = false;
 
   topic: Topic;
+  height: number;
  
   constructor(
     private overlayContainer: OverlayContainer,
@@ -53,6 +54,16 @@ export class MentorComponent {
       topic => {
         this.topic = topic;
        });
+  }
+
+  getHeight(description:string, videos:any){
+    console.log("vid:");
+    console.log(videos);
+    length = 0;
+    if(videos!== undefined && videos.length>0){
+      length = videos.length*50;
+    }
+    return description.length>100? (description.length*0.8+length):100;
   }
 
    public resetSlides(): void {

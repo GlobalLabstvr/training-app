@@ -102,7 +102,7 @@ export class TopicComponent implements OnInit {
 
   showProgram(name:string){
     console.log('nam:'+name);
-    this.topicService.getFile('assets/'+name).subscribe(data => {
+    this.topicService.getFile(name).subscribe(data => {
       console.log('da:'+data);
       this.code = data;
     });;

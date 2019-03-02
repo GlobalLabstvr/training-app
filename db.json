@@ -7,13 +7,8 @@
 			"subject": [
 				{
 					"id": "1",
-					"name": "Set the Path Variable",
+					"name": "Set the Java Path and Class Path",
 					"description": "Set the Path Variable"
-				},
-				{
-					"id": "2",
-					"name": "Set the Classpath Variable",
-					"description": "set the Classpath variable"
 				}
 			]
 		},
@@ -103,104 +98,9 @@
 			"name": "Java Environment Setup",
 			"description": "Java Environment Setup",
 			"programs": [
-				{
-					"id": "1",
-					"name": "Program 1",
-					"description": "Biological neuron",
-					"url": "Abstraction.java"
-				},
-				{
-					"id": "2",
-					"name": "Program 2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 3",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 4",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 5",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 6",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 7",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 8",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				}
 			],
 			"playlist": [
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				}
+				
 			],
 			"slides": [
 				{
@@ -210,133 +110,32 @@
 					"master": {
 						"id": "1",
 						"name": "Java Path",
-						"description": "For running java application, first we need to know how to set the path...",
+						"description": 
+							"For running java application, first we need to know how to set both JAVA path and Class Path environment variables.",
 						"videos": [
 							{
 								"id": "1",
 								"name": "Setting up the Java Path",
-								"description": "Setting up the Java Path",
-								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+								"description": "Setting up the Java and Class Path",
+								"url": "https://www.youtube.com/embed/vhBNV8no4CI"
 							}	
 						],
 						"programs": [
-							{
-								
-							}
+						
 						],
 						"documents": [
-							{
-								"id": "1",
-								"name": "Setting up the Java Path",
-								"description" : "Setting up the Java Path",
-								"url": "https://www.javatpoint.com/how-to-set-path-in-java"
-							}
 						]
 					},
 					"student": {
 						"id": "1",
-						"name": "Abstraction",
-						"description": "This is very abstract concept sir... Can't explain in words...",
+						"name": "Setting up path",
+						"description": "Ok Sir",
 						"videos": [],
 						"programs": [
-							{
-								"id": "1",
-								"name": "Abstraction link",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
+							
 						],
 						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
-					}
-				},
-				{
-					"id": "1",
-					"name": "slide 1",
-					"description": "slide 1",
-					"master": {
-						"id": "1",
-						"name": "Abstraction",
-						"description": "What do you know about the Abstraction?",
-						"videos": [],
-						"programs": [
-							{
-								"id": "1",
-								"name": "Introduction to Abstraction",
-								"description": "What do you know about the Abstraction?",
-								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
-							}
-						],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
-					},
-					"student": {
-						"id": "1",
-						"name": "Abstraction",
-						"description": "This is very abstract concept sir... Can't explain in words...",
-						"videos": [],
-						"programs": [
-							{
-								"id": "1",
-								"name": "Abstraction link",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
-					}
-				},
-				{
-					"id": "2",
-					"name": "slide 2",
-					"description": "slide 2",
-					"master": {
-						"id": "1",
-						"name": "Abstraction",
-						"description": "Excellent!!! Watch the below Video",
-						"videos": [
-							{
-								"id": "1",
-								"name": "Introduction to Abstraction",
-								"description": "What do you know about the Abstraction?",
-								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
-							}
-						],
-						"programs": [],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
-					},
-					"student": {
-						"id": "1",
-						"name": "Abstraction",
-						"description": "Ok Sir...",
-						"videos": [],
-						"programs": [],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
+							
 						]
 					}
 				}
