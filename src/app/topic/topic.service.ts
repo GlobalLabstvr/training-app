@@ -3,6 +3,7 @@ import { Topic } from './topic';
 import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { APIConstants } from '../shared/model/api-constants';
+import { Program } from './model/program';
 
 
 @Injectable({
@@ -12,9 +13,11 @@ export class TopicService {
 
   private videoSubject = new Subject<string>();
   private topicSubject = new Subject<Topic>();
+  private programSubject = new Subject<Program>();
 
   videoAnnounced$ = this.videoSubject.asObservable();
   topicAnnounced$ = this.topicSubject.asObservable();
+  programAnnounced$ = this.programSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +27,10 @@ export class TopicService {
 
   announceVideo(videoUrl: string) {
     this.videoSubject.next(videoUrl);
+  }
+
+  announceProgram(program: Program) {
+    this.programSubject.next(program);
   }
 
   announceTopic(topic:Topic){
@@ -36,9 +43,21 @@ export class TopicService {
 
    //TODO repetitive
    getVideoIndex(topic:Topic,id:string){
+    return this.getIndex(topic.playlist,id);
+  }
+
+  getProgramIndex(topic:Topic,id:string){
+    return this.getIndex(topic.programs,id);
+  }
+
+  getSiteIndex(topic:Topic,id:string){
+    return this.getIndex(topic.sites,id);
+  }
+
+  getIndex(contents:any,id:string){
     var count = -1;
-    for (let video of topic.playlist) {
-      if(video.id === id){
+    for (let content of contents) {
+      if(content.id === id){
         count++;
         return count;
       }
@@ -46,5 +65,6 @@ export class TopicService {
      }
      return count;
   }
+
 
 }

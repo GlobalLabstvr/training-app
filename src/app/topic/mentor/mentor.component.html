@@ -3,12 +3,9 @@
     [hideArrows]="hideArrows" [hideIndicators]="hideIndicators" [color]="color" [maxWidth]="maxWidth"
     [proportion]="proportion" [useKeyboard]="useKeyboard" [useMouseWheel]="useMouseWheel" [orientation]="orientation"
     [slides]="slides">
-    <mat-carousel-slide #matCarouselSlide 
-      *ngFor="let slide of topic.slides; let i = index" 
-      [hideOverlay]="hideOverlay"
+    <mat-carousel-slide #matCarouselSlide *ngFor="let slide of topic.slides; let i = index" [hideOverlay]="hideOverlay"
       image="assets/demo.png">
-      <ng-container>
-
+      <ng-container *ngIf="slide.img===undefined">
         <div class="container">
           <div class="row" style="padding-top:5%;padding-bottom:5%;">
             <div class="col-sm-2">
@@ -25,15 +22,31 @@
                       <button type="button" class="btn btn-link"
                         *ngFor="let video of slide.master.videos; let i = index"
                         (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
-                          {{topic?.playlist[getVideoIndex(video.id)]?.name}}
+                        {{topic?.playlist[getVideoIndex(video.id)]?.name}}
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="slide.img !== undefined">
+                    <div class="col">
+                      <img class="card-img" src="{{slide.img}}" [height]='300' alt="Card image">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label *ngIf="slide.master.programs?.length>0">Practice this Program</label>
+                      <button type="button" class="btn btn-link"
+                        *ngFor="let program of slide.master.programs; let i = index"
+                        (click)="loadProgram(topic.programs[getProgramIndex(program.id)])">
+                        {{topic?.programs[getProgramIndex(program.id)]?.name}}
                       </button>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col">
-                      <label *ngIf="slide.master.programs?.length>0">Refer this Site</label>
-                      <a *ngFor="let program of slide.master.programs; let i = index" target="_blank"
-                        href="{{topic.programs[program.id]?.url}}">&nbsp;{{topic.programs[program.id]?.name}}</a>
+                      <label *ngIf="slide.master.sites?.length>0">Visit this Site</label>
+                      <a *ngFor="let site of slide.master.sites; let i = index" target="_blank"
+                        href="{{topic.sites[getSiteIndex(site.id)]?.url}}">
+                        &nbsp;{{topic.sites[getSiteIndex(site.id)]?.name}}</a>
                     </div>
                   </div>
                 </div>
@@ -43,36 +56,64 @@
           <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <div>
-                    <img class="card-img" src="assets/chat.png" 
-                      [height]='getHeight(slide.student)' alt="Card image">
-                    <div class="card-img-overlay">
-                      <label> {{slide.student.description}} </label>
-                      <div class="row">
-                        <div class="col">
-                          <label *ngIf="slide.student.videos?.length>0">See this Video</label>
-                          <button type="button" class="btn btn-link"
-                            *ngFor="let video of slide.student.videos; let i = index"
-                            (click)="loadVideos(video.url)">{{video.name}}</button>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <label *ngIf="slide.student.programs?.length>0">See this Site </label>
-                          <a *ngFor="let program of slide.student.programs; let i = index" target="_blank"
-                            href="{{program.url}}">{{program.name}}
-                          </a>
-                        </div>
-                      </div>
+              <div>
+                <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.student)' alt="Card image">
+                <div class="card-img-overlay">
+                  <label> {{slide.student.description}} </label>
+                  <div class="row">
+                    <div class="col">
+                      <label *ngIf="slide.student.videos?.length>0">See this Video</label>
+                      <button type="button" class="btn btn-link"
+                        *ngFor="let video of slide.student.videos; let i = index"
+                        (click)="loadVideos(video.url)">{{video.name}}</button>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col">
+                      <label *ngIf="slide.student.programs?.length>0">See this Site </label>
+                      <a *ngFor="let program of slide.student.programs; let i = index" target="_blank"
+                        href="{{program.url}}">{{program.name}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-sm-2">
               <img src='assets/student.png' height="120">
             </div>
           </div>
         </div>
+      </ng-container>
 
+      <ng-container *ngIf="slide.img!==undefined">
+        <div class="container">
+          <div class="row" style="padding-top:2%;padding-bottom:2%;">
+            <div class="col-sm-2">
+              <div class="row">
+                <img src='assets/master.png' height="120px">
+              </div>
+
+                <div class="row">
+                    
+                    
+                </div>
+
+            </div>
+            <div class="col-sm-8">
+              <div class="row">
+                <div>
+                  <img class="card-img" src="{{slide.img}}" height="380px" alt="Card image">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="row">
+                <img src='assets/student.png' height="120">
+              </div>
+            </div>
+          </div>
+        </div>
       </ng-container>
     </mat-carousel-slide>
   </mat-carousel>

@@ -5,6 +5,7 @@ import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { HighlightResult } from 'ngx-highlightjs';
+import { Program } from './model/program';
 
 @Component({
   selector: 'app-topic',
@@ -14,7 +15,7 @@ import { HighlightResult } from 'ngx-highlightjs';
 })
 export class TopicComponent implements OnInit {
   @Input()
-  videoUrl = 'https://www.youtube.com/embed/4TC5s_xNKSs?list=PLH-xYrxjfO2VsvyQXfBvsQsufAzvlqdg9';
+  videoUrl = '';
   response: HighlightResult;
   topic: Topic;
   show: boolean = false;
@@ -23,6 +24,7 @@ export class TopicComponent implements OnInit {
   showPlaylist: boolean = true;
   iframeWidth = 520;
   code = '';
+  programName='';
   
   constructor(private topicService: TopicService,
     private router: Router,
@@ -35,12 +37,18 @@ export class TopicComponent implements OnInit {
         this.loadVideos(videoUrl);
       });
 
+    topicService.programAnnounced$.subscribe(
+      program => {
+        this.showProgram(program);
+        this.setProgramTab();
+      });  
+
 
 
    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
       if (this.route.snapshot.data['topic'] !== undefined) {
         this.topic = this.route.snapshot.data['topic'];
-        console.log(this.topic);
+        this.selectedIndex = 0;
         this.topicService.announceTopic(this.topic);
       }
     });
@@ -63,8 +71,6 @@ export class TopicComponent implements OnInit {
   }
 
   loadVideos(url: string) {
-    console.log('firee:'+url)
-    console.log(this.topic.playlist)
     this.videoUrl = url;
     window.setTimeout(() => {
       this.showPlaylist = false;
@@ -73,18 +79,24 @@ export class TopicComponent implements OnInit {
       this.zone.run(() => {
         console.log('cunnrrent:' + this.selectedIndex)
         this.selectedIndex = 2;
-        // force change detection
-        console.log('zone')
+        this.change.detectChanges();
+      });
+    });
+  }
+
+  setProgramTab() {
+    window.setTimeout(() => {
+      this.zone.run(() => {
+        console.log('cunnrrent:' + this.selectedIndex)
+        this.selectedIndex = 1;
         this.change.detectChanges();
       });
     });
   }
 
   onLinkClick(event: MatTabChangeEvent) {
-    console.log('index => ', event.index);
-        this.selectedIndex = event.index;
+    this.selectedIndex = event.index;
     if (this.selectedIndex != 2) {
-      console.log('index===========> ', event.index);
       this.showPlaylist = true;
       this.iframeWidth = 520;
       this.videoUrl = '';
@@ -101,10 +113,11 @@ export class TopicComponent implements OnInit {
     }
   }
 
-  showProgram(name:string){
+  showProgram(program:Program){
     console.log('nam:'+name);
-    this.topicService.getFile(name).subscribe(data => {
+    this.topicService.getFile(program.url).subscribe(data => {
       console.log('da:'+data);
+      this.programName = program.name;
       this.code = data;
     });;
   }

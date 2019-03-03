@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-sm-8">
           <mat-card class="example-card">
-            <mat-card-header>Abstraction code</mat-card-header>
+            <mat-card-header>{{programName}}</mat-card-header>
             <mat-card-content>
               <div class="anyClass">
                 <pre><code [highlight]="code" (highlighted)="onHighlight($event)"></code></pre>
@@ -38,7 +38,7 @@
                 {{topic.name}}
               </button>
               <button type="button" class="list-group-item list-group-item-action"
-                *ngFor="let program of topic.programs" (click)="showProgram(program.url)"> {{program.name}}
+                *ngFor="let program of topic.programs" (click)="showProgram(program)"> {{program.name}}
               </button>
             </div>
           </div>
@@ -64,7 +64,8 @@
               <button type="button" class="list-group-item list-group-item-action active">
                 {{topic.name}}
               </button>
-              <button type="button" class="list-group-item list-group-item-action" *ngFor="let video of topic.playlist"
+              <button type="button" class="list-group-item list-group-item-action" 
+                *ngFor="let video of topic.playlist"
                 (click)="showVideo(video.url)"> {{video.name}}
               </button>
             </div>

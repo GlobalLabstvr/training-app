@@ -135,6 +135,9 @@
 
 						],
 						"sites": [
+							{
+								"id": "1"
+							}
 						],
 						"documents":[]
 					},
@@ -195,6 +198,30 @@
 						"documents": [],
 						"sites":[]
 					}
+				},
+				{
+					"id": "1",
+					"name": "Introduction to OOPs",
+					"description": "Introduction to OOPs",
+					"img": "assets/ooad/Slide1.JPG",
+					"master": {
+						"id": "1",
+						"name": "Java Path",
+						"description": 
+							"See here",
+						"videos": [],
+						"programs": [],
+						"documents": []
+					},
+					"student": {
+						"id": "1",
+						"name": "",
+						"description": "",
+						"videos": [],
+						"programs": [],
+						"documents": [],
+						"sites":[]
+					}
 				}
 			]
 		},
@@ -206,101 +233,17 @@
 			"programs": [
 				{
 					"id": "1",
-					"name": "Program 1",
-					"description": "Biological neuron",
-					"url": "Abstraction.java"
-				},
-				{
-					"id": "2",
-					"name": "Program 2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 3",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 4",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 5",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 6",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Program 7",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Program 8",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+					"name": "Abstraction Program",
+					"description": "Abstraction Program",
+					"url": "https://raw.githubusercontent.com/GlobalLabstvr/training-programs/master/core-java/abstraction/Shape.java"
 				}
 			],
 			"playlist": [
 				{
 					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
-				},
-				{
-					"id": "1",
-					"name": "Lec 1.1",
-					"description": "Biological neuron",
-					"url": "http://www.html5videoplayer.net/videos/toystory.mp4"
-				},
-				{
-					"id": "2",
-					"name": "Lec 1.2",
-					"description": "Spring to Winter of AI",
-					"url": "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test4_Talkingheadclipped_mp4_480x320.mp4"
+					"name": "Abstraction",
+					"description": "Abstraction",
+					"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
 				}
 			],
 			"slides": [
@@ -313,41 +256,16 @@
 						"name": "Abstraction",
 						"description": "What do you know about the Abstraction?",
 						"videos": [],
-						"programs": [
-							{
-								"id": "1",
-								"name": "Introduction to Abstraction",
-								"description": "What do you know about the Abstraction?",
-								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
-							}
-						],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
+						"programs": [],
+						"documents": []
 					},
 					"student": {
 						"id": "1",
 						"name": "Abstraction",
 						"description": "This is very abstract concept sir... Can't explain in words...",
 						"videos": [],
-						"programs": [
-							{
-								"id": "1",
-								"name": "Abstraction link",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						],
-						"documents": [
-							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
-							}
-						]
+						"programs": [],
+						"documents": []
 					}
 				},
 				{
@@ -357,23 +275,18 @@
 					"master": {
 						"id": "1",
 						"name": "Abstraction",
-						"description": "Excellent!!! Watch the below Video",
+						"description": "Excellent!!!",
 						"videos": [
 							{
-								"id": "1",
-								"name": "Introduction to Abstraction",
-								"description": "What do you know about the Abstraction?",
-								"url": "https://www.youtube.com/embed/6V1sr0XV_Ng"
+								"id": "1"
 							}
 						],
-						"programs": [],
-						"documents": [
+						"programs": [
 							{
-								"id": "1",
-								"name": "Abstraction docs",
-								"url": "https://youtu.be/zZq_XDhU-rc"
+								"id": "1"
 							}
-						]
+						],
+						"documents": []
 					},
 					"student": {
 						"id": "1",
