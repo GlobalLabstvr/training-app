@@ -1,6 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
-import { ThemePalette } from '@angular/material';
+import { ThemePalette, MatDialog } from '@angular/material';
 
 import {
   MatCarouselSlideComponent,
@@ -9,6 +9,8 @@ import {
 import { TopicService } from '../topic.service';
 import { Topic } from '../topic';
 import { Program } from '../model/program';
+import { DialogDataExampleDialog } from './dialog-data-example.dialog';
+import { Slide } from '../slide';
 
 @Component({
   selector: 'app-mentor',
@@ -24,7 +26,7 @@ export class MentorComponent {
 
   public timings = '250ms ease-in';
   public autoplay = false;
-  public interval = 5000;
+  public interval = 50000;
   public loop = false;
   public hideArrows = true;
   public hideIndicators = false;
@@ -49,7 +51,8 @@ export class MentorComponent {
   constructor(
     private overlayContainer: OverlayContainer,
     private elementRef: ElementRef<HTMLElement>,
-    private topicService: TopicService
+    private topicService: TopicService,
+    public dialog: MatDialog
   ) {
     topicService.topicAnnounced$.subscribe(
     (topic : Topic) => {
@@ -97,6 +100,19 @@ export class MentorComponent {
 
   getSiteIndex(id:string){
     return this.topicService.getSiteIndex(this.topic,id);
+  }
+
+  openDialog(slide:Slide) {
+    this.dialog.open(DialogDataExampleDialog, {
+      width: '250px',
+      data: {
+        "slide": slide
+      },
+      position: {
+        top: '300px',
+        left: '300px'
+      }
+    });
   }
 
 }

@@ -91,19 +91,18 @@
           <div class="row" style="padding-top:2%;padding-bottom:2%;">
             <div class="col-sm-2">
               <div class="row">
-                <img src='assets/master.png' height="120px">
+                <img draggable="false" src='assets/master.png' height="120px">
               </div>
 
                 <div class="row">
-                    
-                    
+                    <button mat-button (click)="openDialog(slide)">Open dialog</button>
                 </div>
 
             </div>
             <div class="col-sm-8">
               <div class="row">
                 <div>
-                  <img class="card-img" src="{{slide.img}}" height="380px" alt="Card image">
+                  <img  draggable="false"  class="card-img" src="{{slide.img}}" alt="Card image">
                 </div>
               </div>
             </div>

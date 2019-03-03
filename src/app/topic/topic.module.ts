@@ -9,11 +9,12 @@ import { SharedModule } from '../shared/shared.module';
 import { UploadModule } from '../shared/upload/upload.module';
 import { MentorComponent } from './mentor/mentor.component'; 
 import { HighlightModule } from 'ngx-highlightjs';
+import { DialogDataExampleDialog } from './mentor/dialog-data-example.dialog';
 
 
 
 @NgModule({
-  declarations: [ TopicComponent, MentorComponent ],
+  declarations: [ TopicComponent, MentorComponent , DialogDataExampleDialog],
   imports: [
     CommonModule,
     SharedModule,
@@ -23,7 +24,8 @@ import { HighlightModule } from 'ngx-highlightjs';
     HighlightModule
     
   ],
-  providers: [TopicResolver]
+  providers: [TopicResolver],
+  entryComponents: [DialogDataExampleDialog]
 })
 export class TopicModule {
  
