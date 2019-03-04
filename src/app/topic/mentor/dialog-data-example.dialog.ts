@@ -1,7 +1,6 @@
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { Component, Inject } from '@angular/core';
 import { Slide } from '../slide';
-import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
     selector: 'dialog-data-example-dialog',

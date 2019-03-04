@@ -5,11 +5,17 @@
     [slides]="slides">
     <mat-carousel-slide #matCarouselSlide *ngFor="let slide of topic.slides; let i = index" [hideOverlay]="hideOverlay"
       image="assets/demo.png">
-      <ng-container *ngIf="slide.img===undefined">
+      <ng-container>
         <div class="container">
           <div class="row" style="padding-top:5%;padding-bottom:5%;">
             <div class="col-sm-2">
+              <div class="row">
               <img src='assets/master.png' height="120px">
+              </div>
+              <div class="row" *ngIf="slide.img!==undefined">
+                <button type="button" class="btn btn-link"
+                 (click)="openDialog(slide)">Open Diagram</button>
+              </div>
             </div>
             <div class="col-sm-8">
               <div>
@@ -24,11 +30,6 @@
                         (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
                         {{topic?.playlist[getVideoIndex(video.id)]?.name}}
                       </button>
-                    </div>
-                  </div>
-                  <div class="row" *ngIf="slide.img !== undefined">
-                    <div class="col">
-                      <img class="card-img" src="{{slide.img}}" [height]='300' alt="Card image">
                     </div>
                   </div>
                   <div class="row">
@@ -81,35 +82,6 @@
             </div>
             <div class="col-sm-2">
               <img src='assets/student.png' height="120">
-            </div>
-          </div>
-        </div>
-      </ng-container>
-
-      <ng-container *ngIf="slide.img!==undefined">
-        <div class="container">
-          <div class="row" style="padding-top:2%;padding-bottom:2%;">
-            <div class="col-sm-2">
-              <div class="row">
-                <img draggable="false" src='assets/master.png' height="120px">
-              </div>
-
-                <div class="row">
-                    <button mat-button (click)="openDialog(slide)">Open dialog</button>
-                </div>
-
-            </div>
-            <div class="col-sm-8">
-              <div class="row">
-                <div>
-                  <img  draggable="false"  class="card-img" src="{{slide.img}}" alt="Card image">
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="row">
-                <img src='assets/student.png' height="120">
-              </div>
             </div>
           </div>
         </div>

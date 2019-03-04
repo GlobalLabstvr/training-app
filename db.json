@@ -97,7 +97,6 @@
 			"id": "11",
 			"name": "Java Environment Setup",
 			"description": "Java Environment Setup",
-			
 			"playlist": [
 				{
 					"id": "1",
@@ -107,15 +106,15 @@
 				}
 			],
 			"programs": [],
-			"sites" : [
+			"sites": [
 				{
 					"id": "1",
 					"name": "Java Environment Setup",
 					"description": "Java Environment Setup",
-					"url" : "https://www.sitesbay.com/java/java-classpath-setting"
+					"url": "https://www.sitesbay.com/java/java-classpath-setting"
 				}
 			],
-			"documents":[],
+			"documents": [],
 			"slides": [
 				{
 					"id": "1",
@@ -124,22 +123,19 @@
 					"master": {
 						"id": "1",
 						"name": "Java Path",
-						"description": 
-							"For running java application, first we need to know how to set both JAVA path and Class Path environment variables.",
+						"description": "For running java application, first we need to know how to set both JAVA path and Class Path environment variables.",
 						"videos": [
 							{
 								"id": "1"
 							}
 						],
-						"programs": [
-
-						],
+						"programs": [],
 						"sites": [
 							{
 								"id": "1"
 							}
 						],
-						"documents":[]
+						"documents": []
 					},
 					"student": {
 						"id": "1",
@@ -156,18 +152,17 @@
 			"id": "21",
 			"name": "Introduction to OOPs",
 			"description": "Introduction to OOPs",
-			"programs": [
-			],
+			"programs": [],
 			"playlist": [
 				{
 					"id": "1",
 					"name": "POPs vs OOPs",
 					"description": "POPs vs OOPs",
 					"url": "https://www.youtube.com/embed/70sld4fYcqU"
-				}	
+				}
 			],
-			"sites":[],
-			"documents":[],
+			"sites": [],
+			"documents": [],
 			"slides": [
 				{
 					"id": "1",
@@ -176,18 +171,14 @@
 					"master": {
 						"id": "1",
 						"name": "Java Path",
-						"description": 
-							"To understand OOPs concepts, first we need to know the difference between \n Procedural Oriented Programming and Object Oriented Programming",
+						"description": "To understand OOPs concepts, first we need to know the difference between \n Procedural Oriented Programming and Object Oriented Programming",
 						"videos": [
 							{
 								"id": "1"
-							}	
+							}
 						],
-						"programs": [
-						
-						],
-						"documents": [
-						]
+						"programs": [],
+						"documents": []
 					},
 					"student": {
 						"id": "1",
@@ -196,7 +187,7 @@
 						"videos": [],
 						"programs": [],
 						"documents": [],
-						"sites":[]
+						"sites": []
 					}
 				},
 				{
@@ -207,8 +198,7 @@
 					"master": {
 						"id": "1",
 						"name": "Java Path",
-						"description": 
-							"See here",
+						"description": "See the picture. What you are seeing in this picture?",
 						"videos": [],
 						"programs": [],
 						"documents": []
@@ -216,16 +206,61 @@
 					"student": {
 						"id": "1",
 						"name": "",
-						"description": "",
+						"description": "I am seeing couple of apple, mango, cabbage...",
 						"videos": [],
 						"programs": [],
 						"documents": [],
-						"sites":[]
+						"sites": []
+					}
+				},
+				{
+					"id": "2",
+					"name": "Introduction to OOPs",
+					"description": "Introduction to OOPs",
+					"master": {
+						"id": "1",
+						"name": "OOPs",
+						"description": "We know the vegetables and fruits having calories...\n I want to get the calorie from each food. \n How do you write a program?",
+						"videos": [],
+						"programs": [],
+						"documents": []
+					},
+					"student": {
+						"id": "1",
+						"name": "",
+						"description": "We can write getCalorie() method in each Apple and Cabbage Class \n and retrieve the calorie value...",
+						"videos": [],
+						"programs": [],
+						"documents": [],
+						"sites": []
+					}
+				},
+				{
+					"id": "3",
+					"name": "Introduction to OOPs",
+					"description": "Introduction to OOPs",
+					"img": "assets/ooad/Slide2.JPG",
+					"master": {
+						"id": "1",
+						"name": "OOPs",
+						"description": "Good... For writing programs in OOPs languages, we first think about following steps:\n1. Finding all objects in the problem; \n 2. Template these identified objects;\n3. Group them based on the common feature\n4. Put into hierarchy. ",
+						"videos": [],
+						"programs": [],
+						"documents": []
+					},
+					"student": {
+						"id": "1",
+						"name": "",
+						"description": "Can you explain in detail...sir",
+						"videos": [],
+						"programs": [],
+						"documents": [],
+						"sites": []
 					}
 				}
+				
 			]
 		},
-
 		{
 			"id": "22",
 			"name": "abstraction",

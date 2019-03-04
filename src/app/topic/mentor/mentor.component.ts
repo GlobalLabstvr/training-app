@@ -103,14 +103,14 @@ export class MentorComponent {
   }
 
   openDialog(slide:Slide) {
+    console.log(slide.img);
     this.dialog.open(DialogDataExampleDialog, {
-      width: '250px',
       data: {
         "slide": slide
       },
       position: {
-        top: '300px',
-        left: '300px'
+        top: '100px',
+        right: '40px'
       }
     });
   }
