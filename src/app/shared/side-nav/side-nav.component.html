@@ -1,70 +1,13 @@
   <div class="sidenav">
   <mat-accordion class="example">
-  <mat-expansion-panel *ngFor="let course of courses;let i = index" (opened)="open(course)">
+  <mat-expansion-panel *ngFor="let course of courses;let i = index">
     <mat-expansion-panel-header>
       {{course.name}}
     </mat-expansion-panel-header>
     <a 
-    [routerLink]="['/topic',subject.id]"  
-      *ngFor="let subject of course.subject">{{subject.name}}</a>  
+    [routerLink]="['/topics/subjects/',subject.id]"  
+      *ngFor="let subject of course.subjects">{{subject.name}}</a>  
   </mat-expansion-panel>
- <!--
-  <mat-expansion-panel>
-        <mat-expansion-panel-header>Generics</mat-expansion-panel-header>
-        <a href="#">Generics Test</a>
-      </mat-expansion-panel>
- <mat-expansion-panel>
-      <mat-expansion-panel-header>JavaCollections</mat-expansion-panel-header>
-      <a href="#">Arrays</a>
-      <a href="#">Linked List</a>
-      <a href="#">Queue</a>
-      <a href="#">HashSet</a>
-      <a href="#">LinkedHashSet</a>
-      <a href="#">TreeSet</a>
-  </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>Generics</mat-expansion-panel-header>
-        <a href="#">Generics Test</a>
-      </mat-expansion-panel>
-  <mat-expansion-panel >
-    <mat-expansion-panel-header>Socket</mat-expansion-panel-header>
-    <a href="#">Client to Server</a>
-    <a href="#">Server to Client</a>
-    <a href="#">Two way,non-continous</a>
-    <a href="#">Two way,continous</a>
-    </mat-expansion-panel>
-  <mat-expansion-panel>
-      <mat-expansion-panel-header>Servlet</mat-expansion-panel-header>
-      <a href="#">Simple Servlet Example</a>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>Thread</mat-expansion-panel-header>
-        <a href="#">Multithread program</a>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-      <mat-expansion-panel-header>WebService</mat-expansion-panel-header>
-        <a href="#">Servlet WebService</a>
-      </mat-expansion-panel>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>RMI</mat-expansion-panel-header>
-    <a href="#">RMI ex--Corba,sevlet,Socket</a>
-  </mat-expansion-panel>
-  <mat-expansion-panel>
-      <mat-expansion-panel-header>SOAP</mat-expansion-panel-header>
-      <a href="#">Soap WebService</a>
-    </mat-expansion-panel>
-  <mat-expansion-panel>
-      <mat-expansion-panel-header>Spring</mat-expansion-panel-header>
-      <a href="#">Spring Core</a>
-      <a href="#">Spring MVC</a>
-      <a href="#">Spring Anno</a>
-      <a href="#">Spring Boot</a>
-      <a href="#">Restful WebService</a>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>Hibernate</mat-expansion-panel-header>
-        <a href="#">Simple Hibernate project</a>
-        <a href="#">Hibernate Employee</a>
-      </mat-expansion-panel>-->
+ 
 </mat-accordion>
 </div>

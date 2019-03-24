@@ -29,22 +29,8 @@ export class SideNavComponent implements OnInit {
       this.coursesService.getCourses()
         .subscribe(courses => 
           {
+            console.log("course:"+JSON.stringify(courses));
             this.courses = courses
           });
     }
-
-    getSubjects(course:Course): void {
-      this.subjectService.getSubjectsByCourseId(course.id)
-        .subscribe(subjects => 
-          {
-            course.subject = subjects;
-            console.log("sub:"+ JSON.stringify(course.subject));
-          });
-    }
-
-    open(course: Course){
-      console.log("course.id"+JSON.stringify(course));
-        return this.getSubjects(course);
-    }
-
 }

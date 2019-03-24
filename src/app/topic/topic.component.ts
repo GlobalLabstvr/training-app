@@ -48,6 +48,7 @@ export class TopicComponent implements OnInit {
    this.subscribtion = this.router.events.subscribe((event: NavigationStart) => {
       if (this.route.snapshot.data['topic'] !== undefined) {
         this.topic = this.route.snapshot.data['topic'];
+        console.log('topic:'+JSON.stringify(this.topic));
         this.selectedIndex = 0;
         this.topicService.announceTopic(this.topic);
       }

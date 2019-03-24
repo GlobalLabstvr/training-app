@@ -5,7 +5,7 @@ import { LoginModule } from './login/login.module';
 
 const routes: Routes = [
   { path: 'home' , loadChildren: './home/home.module#HomeModule'},
-  { path:'topic/:id', loadChildren: './topic/topic.module#TopicModule' },
+  { path:'topics/subjects/:id', loadChildren: './topic/topic.module#TopicModule' },
   { path: 'login' , loadChildren: './login/login.module#LoginModule' },
   { path: '' , redirectTo: '/home', pathMatch: 'full'},
   
