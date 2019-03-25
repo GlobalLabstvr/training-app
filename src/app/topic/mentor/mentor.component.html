@@ -21,14 +21,13 @@
               <div>
                 <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.master)' alt="Card image">
                 <div class="card-img-overlay">
-                  <label> {{slide.master.description}} </label>
+                  <label> {{slide.master}} </label>
                   <div class="row">
                     <div class="col">
-                      <label *ngIf="slide.master.videos?.length>0">See this Video</label>
+                      <label *ngIf="slide.playlist!==''">See this Video</label>
                       <button type="button" class="btn btn-link"
-                        *ngFor="let video of slide.master.videos; let i = index"
-                        (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
-                        {{topic?.playlist[getVideoIndex(video.id)]?.name}}
+                        (click)="loadVideos(topic.playlists[getVideoIndex(slide.playlist)].url)">
+                        {{topic.playlists[getVideoIndex(slide.playlist)].name}}
                       </button>
                     </div>
                   </div>

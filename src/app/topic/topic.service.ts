@@ -43,7 +43,8 @@ export class TopicService {
 
    //TODO repetitive
    getVideoIndex(topic:Topic,id:string){
-    return this.getIndex(topic.playlist,id);
+     console.log("topic.palylist:"+JSON.stringify(topic));
+    return this.getIndex(topic.playlists,id);
   }
 
   getProgramIndex(topic:Topic,id:string){
@@ -54,11 +55,21 @@ export class TopicService {
     return this.getIndex(topic.sites,id);
   }
 
+  getDocumentIndex(topic:Topic,id:string){
+    return this.getIndex(topic.documents,id);
+  }
+
   getIndex(contents:any,id:string){
     var count = -1;
+    console.log("id:"+id);
+    console.log("contents:"+JSON.stringify(contents));
     for (let content of contents) {
-      if(content.id === id){
+      console.log('content id:'+content.id)
+      console.log('equal:'+ (content.id === Number(id)));
+      if(content.id === Number(id)){
+        
         count++;
+        console.log('countnnt:'+count);
         return count;
       }
       count++;

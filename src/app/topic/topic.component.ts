@@ -72,6 +72,7 @@ export class TopicComponent implements OnInit {
   }
 
   loadVideos(url: string) {
+    console.log('video url:'+url);
     this.videoUrl = url;
     window.setTimeout(() => {
       this.showPlaylist = false;
@@ -124,7 +125,19 @@ export class TopicComponent implements OnInit {
   }
   
   getVideoIndex(id:string){
+
     return this.topicService.getVideoIndex(this.topic,id);
   }
 
+  getProgramIndex(id:string){
+    return this.topicService.getProgramIndex(this.topic,id);
+  }
+
+  getDocumentIndex(id:string){
+    return this.topicService.getDocumentIndex(this.topic,id);
+  }
+
+  getSiteIndex(id:string){
+    return this.topicService.getSiteIndex(this.topic,id);
+  }
 }

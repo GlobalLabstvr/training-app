@@ -100,26 +100,26 @@
             <mat-expansion-panel-header> <b>{{slide.name}}</b> </mat-expansion-panel-header>
             <div class="row">
               <div class="col-md-12">
-                <mat-expansion-panel *ngIf="slide.master.videos.length>0">
+                <mat-expansion-panel *ngIf="slide.playlist!=''">
                   <mat-expansion-panel-header> Watch Videos </mat-expansion-panel-header>
-                  <button type="button" class="btn btn-link" *ngFor="let video of slide.master.videos; let i = index"
-                    (click)="loadVideos(topic.playlist[getVideoIndex(video.id)].url)">
-                    {{topic.playlist[getVideoIndex(video.id)].name}}</button>
+                  <button type="button" class="btn btn-link"
+                    (click)="loadVideos(topic.playlists[getVideoIndex(slide.playlist)].url)">
+                    {{topic.playlists[getVideoIndex(slide.playlist)].name}}</button>
                 </mat-expansion-panel>
   
-                <mat-expansion-panel  *ngIf="slide.master.programs.length>0">
+                <mat-expansion-panel  *ngIf="slide.program!==''">
                   <mat-expansion-panel-header> Practice Programs </mat-expansion-panel-header>
                   <button type="button" class="btn btn-link" 
-                    *ngFor="let program of slide.master.programs; let i = index"
-                  (click)="showProgram(program.url)">{{program.name}}</button>
+                  (click)="showProgram(topic.programs[getProgramIndex(slide.program)].url)">
+                  {{topic.programs[getProgramIndex(slide.program)].name}}</button>
                 </mat-expansion-panel>
 
-                <mat-expansion-panel  *ngIf="slide.master.programs.length>0">
+                <!--<mat-expansion-panel  *ngIf="slide.master.programs.length>0">
                     <mat-expansion-panel-header> Visit Sites </mat-expansion-panel-header>
                     <button type="button" class="btn btn-link" 
                       *ngFor="let program of slide.master.programs; let i = index"
                     (click)="showProgram(program.url)">{{program.name}}</button>
-                  </mat-expansion-panel> 
+                  </mat-expansion-panel> -->
               </div>
             </div>
           </mat-expansion-panel>
