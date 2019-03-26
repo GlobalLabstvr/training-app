@@ -19,7 +19,9 @@
             </div>
             <div class="col-sm-8">
               <div>
-                <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.master)' alt="Card image">
+                <img class="card-img" src="assets/chat.png" 
+                [height]='getHeight(slide.student,slide)'
+                alt="Card image">
                 <div class="card-img-overlay">
                   <label> {{slide.master}} </label>
                   <div class="row">
@@ -33,20 +35,19 @@
                   </div>
                   <div class="row">
                     <div class="col">
-                      <label *ngIf="slide.master.programs?.length>0">Practice this Program</label>
+                      <label *ngIf="slide.program !==''">Practice this Program</label>
                       <button type="button" class="btn btn-link"
-                        *ngFor="let program of slide.master.programs; let i = index"
-                        (click)="loadProgram(topic.programs[getProgramIndex(program.id)])">
-                        {{topic?.programs[getProgramIndex(program.id)]?.name}}
+                        (click)="loadProgram(topic.programs[getProgramIndex(slide.program)])">
+                        {{topic?.programs[getProgramIndex(slide.program)]?.name}}
                       </button>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col">
-                      <label *ngIf="slide.master.sites?.length>0">Visit this Site</label>
-                      <a *ngFor="let site of slide.master.sites; let i = index" target="_blank"
-                        href="{{topic.sites[getSiteIndex(site.id)]?.url}}">
-                        &nbsp;{{topic.sites[getSiteIndex(site.id)]?.name}}</a>
+                      <label *ngIf="slide.site!==''">Visit this Site</label>
+                      <a  target="_blank"
+                        href="{{topic.sites[getSiteIndex(slide.site)]?.url}}">
+                        &nbsp;{{topic.sites[getSiteIndex(slide.site)]?.name}}</a>
                     </div>
                   </div>
                 </div>
@@ -57,25 +58,9 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
               <div>
-                <img class="card-img" src="assets/chat.png" [height]='getHeight(slide.student)' alt="Card image">
+                <img class="card-img" src="assets/chat.png" height='120px' alt="Card image">
                 <div class="card-img-overlay">
-                  <label> {{slide.student.description}} </label>
-                  <div class="row">
-                    <div class="col">
-                      <label *ngIf="slide.student.videos?.length>0">See this Video</label>
-                      <button type="button" class="btn btn-link"
-                        *ngFor="let video of slide.student.videos; let i = index"
-                        (click)="loadVideos(video.url)">{{video.name}}</button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label *ngIf="slide.student.programs?.length>0">See this Site </label>
-                      <a *ngFor="let program of slide.student.programs; let i = index" target="_blank"
-                        href="{{program.url}}">{{program.name}}
-                      </a>
-                    </div>
-                  </div>
+                  <label> {{slide.student}} </label>
                 </div>
               </div>
             </div>

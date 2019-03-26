@@ -60,16 +60,15 @@ export class MentorComponent {
       });
   }
 
-  getHeight(master: any) {
+  getHeight(desc: any, slide:any) {
     length = 0;
-    if (master.description !== undefined) {
-      var desc: string = master.description;
-
-      if (master.videos !== undefined && Object.keys(master.videos).length > 0) {
-        length += Object.keys(master.videos).length * 40;
+    if (desc !== undefined) {
+      
+      if (slide.playlist !== undefined && slide.playlist!=='') {
+        length += slide.playlist.length * 40;
       }
-      if (master.programs !== undefined && Object.keys(master.programs).length > 0) {
-        length += Object.keys(master.programs).length * 40;
+      if (slide.program !== undefined && slide.program !== '') {
+        length += slide.program.length * 40;
       }
       length = length + (desc.length > 100 ? desc.length : 100);
     }
