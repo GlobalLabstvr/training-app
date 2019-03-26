@@ -63,7 +63,7 @@ export class MentorComponent {
   getHeight(desc: any, slide:any) {
     length = 0;
     if (desc !== undefined) {
-      
+
       if (slide.playlist !== undefined && slide.playlist!=='') {
         length += slide.playlist.length * 40;
       }
@@ -73,6 +73,10 @@ export class MentorComponent {
       length = length + (desc.length > 100 ? desc.length : 100);
     }
     return length;
+  }
+
+  getStudentDescHeight(desc:string){
+    return desc.length > 100 ? desc.length : 100;
   }
 
   public resetSlides(): void {
