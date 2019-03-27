@@ -59,15 +59,14 @@ export class MentorComponent {
         this.topic = topic;
       });
   }
-
   getHeight(desc: any, slide:any) {
     length = 0;
     if (desc !== undefined) {
 
-      if (slide.playlist !== undefined && slide.playlist!=='') {
+      if (slide.playlist !== undefined && slide.playlist!==null && slide.playlist!=='') {
         length += slide.playlist.length * 40;
       }
-      if (slide.program !== undefined && slide.program !== '') {
+      if (slide.program !== undefined && slide.playlist !== null && slide.program!=='') {
         length += slide.program.length * 40;
       }
       length = length + (desc.length > 100 ? desc.length : 100);
