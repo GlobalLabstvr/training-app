@@ -12,7 +12,7 @@
                 <div class="row">
                 <img src='assets/master.png' height="120px">
                 </div>
-                <div class="row" *ngIf="slide.img!==undefined">
+                <div class="row" *ngIf="slide.img!==null">
                   <button type="button" class="btn btn-link"
                    (click)="openDialog(slide)">Open Diagram</button>
                 </div>
@@ -58,8 +58,7 @@
               <div class="col-sm-2"></div>
               <div class="col-sm-8">
                 <div>
-                    <img class="card-img" src="assets/chat.png" height='120px' alt="Card image">
-                  <img class="card-img" src="assets/chat.png" [height]='getStudentDescHeight(slide.student)' alt="Card image">
+                   <img class="card-img" src="assets/chat.png" [height]='getStudentDescHeight(slide.student)' alt="Card image">
                   <div class="card-img-overlay">
                     <label> {{slide.student}} </label>
                   </div>

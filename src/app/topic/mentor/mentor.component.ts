@@ -66,7 +66,7 @@ export class MentorComponent {
       if (slide.playlist !== undefined && slide.playlist!==null && slide.playlist!=='') {
         length += slide.playlist.length * 40;
       }
-      if (slide.program !== undefined && slide.playlist !== null && slide.program!=='') {
+      if (slide.program !== undefined && slide.program !== null && slide.program!=='') {
         length += slide.program.length * 40;
       }
       length = length + (desc.length > 100 ? desc.length : 100);
